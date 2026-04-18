@@ -7,8 +7,11 @@ const blog = defineCollection({
     title: z.string(),
     date: z.date(),
     description: z.string(),
-    icon: z.string().optional(),
+    image: z.string().optional(),
+    icon: z.string().optional(), // Replaced by image but kept for backward compatibility
+    author: z.string().default('Livia Team'),
     tag: z.string().default('Insights'),
+    featured: z.boolean().default(false),
   }),
 });
 

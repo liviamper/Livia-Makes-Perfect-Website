@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="404 - Page Not Found | Livia Makes Perfect"
+  description="The page you are looking for might have been moved or deleted."
+  noindex={true}
+>
+  <section class="container fade-in" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div>
+      <div style="font-size: 8rem; font-weight: 700; color: #eee; margin-bottom: -2rem;">404</div>
+      <p class="section-label" style="position: relative; z-index: 1;">Oops! Lost in Digital Space</p>
+      <h1 style="margin-top: 1rem;">Page Not <span class="text-brand">Found</span></h1>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:500px; margin:1.5rem auto 3rem;">We couldn't find the page you were looking for. It might have been moved, renamed, or simply never existed.</p>
+      
+      <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+        <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+        <a href="/services" class="btn btn-outline btn-lg">View Services</a>
+      </div>
+      
+      <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-light);">
+        Think this is a mistake? <a href="/contact" style="color: var(--brand); font-weight: 600;">Report a broken link</a>
+      </div>
+    </div>
+  </section>
+</Layout>

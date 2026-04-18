@@ -1,0 +1,100 @@
+/* 
+   HubSpot-Inspired Agency Dashboard Theme 
+   Transforms Sveltia/Decap CMS into a high-fidelity marketing suite.
+*/
+
+:root {
+    --hs-orange: #ff7a59;
+    --hs-blue: #2e475d;
+    --hs-bg: #f5f8fa;
+    --hs-border: #cbd6e2;
+    --hs-text: #33475b;
+}
+
+/* Base Body Styles */
+body {
+    background-color: var(--hs-bg) !important;
+    font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    color: var(--hs-text) !important;
+}
+
+/* Sidebar Styling */
+nav[class*="Sidebar"] {
+    background-color: var(--hs-blue) !important;
+    color: white !important;
+}
+
+nav[class*="Sidebar"] a {
+    color: rgba(255,255,255,0.7) !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease;
+}
+
+nav[class*="Sidebar"] a:hover, 
+nav[class*="Sidebar"] a[aria-current="page"] {
+    color: white !important;
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Header & Breadcrumbs */
+header[class*="Header"] {
+    background: white !important;
+    border-bottom: 1px solid var(--hs-border) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+/* Buttons - The HubSpot Look */
+button[class*="Button"] {
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+/* Primary Button (Orange) */
+button[class*="Button-primary"], 
+button[class*="Button-blue"] {
+    background-color: var(--hs-orange) !important;
+    border: 1px solid var(--hs-orange) !important;
+    color: white !important;
+}
+
+button[class*="Button-primary"]:hover {
+    background-color: #ff8f73 !important;
+    transform: translateY(-1px);
+}
+
+/* Cards & Containers */
+div[class*="Card"], div[class*="ControlContainer"] {
+    background: white !important;
+    border: 1px solid var(--hs-border) !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02) !important;
+    margin-bottom: 20px !important;
+}
+
+/* Inputs */
+input, textarea, select {
+    border: 1px solid var(--hs-border) !important;
+    border-radius: 3px !important;
+    padding: 10px 12px !important;
+    transition: border-color 0.2s ease !important;
+}
+
+input:focus {
+    border-color: var(--hs-orange) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(255, 122, 89, 0.2) !important;
+}
+
+/* Dashboard Logo or Brand info */
+h1 {
+    font-weight: 700 !important;
+    color: var(--hs-blue) !important;
+}
+
+/* Clean up the grid */
+div[class*="Grid"] {
+    gap: 24px !important;
+}
