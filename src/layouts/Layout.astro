@@ -11,6 +11,25 @@ const { title, description, keywords, canonicalUrl, noindex = false } = Astro.pr
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const globalSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Livia Makes Perfect",
+  "url": "https://liviamperfect.web.app/",
+  "logo": "https://liviamperfect.web.app/assets/images/social.png",
+  "sameAs": [
+    "https://www.instagram.com/liviamperfect",
+    "https://www.linkedin.com/company/liviamperfect"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Livia Makes Perfect",
+  "url": "https://liviamperfect.web.app/"
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +55,10 @@ import Footer from '../components/Footer.astro';
   {keywords && <meta name="keywords" content={keywords}>}
   <meta name="author" content="Livia Makes Perfect">
   {canonicalUrl && <link rel="canonical" href={canonicalUrl}>}
+  
+  <!-- SEO Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(globalSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
