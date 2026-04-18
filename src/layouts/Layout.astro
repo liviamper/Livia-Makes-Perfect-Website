@@ -62,6 +62,21 @@ import Footer from '../components/Footer.astro';
   
   <Footer />
 
-  <script src="/js/app.js" is:inline></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.fade-in, .fade-in-up, .scroll-reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>

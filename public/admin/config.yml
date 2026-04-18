@@ -17,7 +17,6 @@ collections:
     folder: "src/content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    # Live Preview / View Page link:
     view_url: "https://liviamperfect.web.app/blog/{{id}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
@@ -29,6 +28,7 @@ collections:
         name: "tag"
         widget: "select"
         options: ["Insights", "Marketing", "RevOps", "Ads", "Branding"]
+        create: true # Allows the user to add new categories in the future
         default: "Insights"
       - {label: "Featured Post", name: "featured", widget: "boolean", default: false}
       - {label: "Body", name: "body", widget: "markdown"}
