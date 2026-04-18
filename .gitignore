@@ -1,8 +1,6 @@
 # Firebase
 .firebase/
 firebase-debug.log*
-.firebaserc
-firebase.json
 
 # Local env
 .env
