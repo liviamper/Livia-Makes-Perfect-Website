@@ -1,0 +1,17 @@
+# Firebase
+.firebase/
+firebase-debug.log*
+.firebaserc
+firebase.json
+
+# Local env
+.env
+.env.local
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Deploy scripts
+deploy.bat
+github-setup.bat
