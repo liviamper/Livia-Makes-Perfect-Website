@@ -1,100 +1,110 @@
 /* 
-   HubSpot-Inspired Agency Dashboard Theme 
-   Transforms Sveltia/Decap CMS into a high-fidelity marketing suite.
+   HubSpot-Inspired Agency Dashboard Theme (Phase 3 - Professional Light Mode)
+   Focus: Zero clutter, high speed, and HubSpot-style interactions.
 */
 
 :root {
     --hs-orange: #ff7a59;
+    --hs-orange-hover: #ff8f73;
     --hs-blue: #2e475d;
-    --hs-bg: #f5f8fa;
+    --hs-gray-bg: #f5f8fa;
     --hs-border: #cbd6e2;
     --hs-text: #33475b;
+    --hs-white: #ffffff;
 }
 
-/* Base Body Styles */
+/* 1. Global Light Mode Force */
 body {
-    background-color: var(--hs-bg) !important;
-    font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    background-color: var(--hs-gray-bg) !important;
+    font-family: 'Inter', sans-serif !important;
     color: var(--hs-text) !important;
 }
 
-/* Sidebar Styling */
+/* 2. Hide Side Preview (Focus Mode) */
+main[class*="PreviewPane"], 
+div[class*="PaneContainer-preview"] {
+    display: none !important;
+}
+
+/* 3. Sidebar - Light & Professional */
 nav[class*="Sidebar"] {
-    background-color: var(--hs-blue) !important;
-    color: white !important;
+    background-color: var(--hs-white) !important;
+    border-right: 1px solid var(--hs-border) !important;
+    box-shadow: none !important;
 }
 
 nav[class*="Sidebar"] a {
-    color: rgba(255,255,255,0.7) !important;
+    color: var(--hs-text) !important;
     font-weight: 500 !important;
-    transition: all 0.2s ease;
+    padding: 10px 20px !important;
+    border-radius: 4px !important;
+    margin: 4px 10px !important;
 }
 
-nav[class*="Sidebar"] a:hover, 
-nav[class*="Sidebar"] a[aria-current="page"] {
-    color: white !important;
-    background-color: rgba(255,255,255,0.1) !important;
-}
-
-/* Header & Breadcrumbs */
-header[class*="Header"] {
-    background: white !important;
-    border-bottom: 1px solid var(--hs-border) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
-}
-
-/* Buttons - The HubSpot Look */
-button[class*="Button"] {
-    border-radius: 3px !important;
-    font-weight: 600 !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    transition: all 0.15s ease-in-out !important;
-}
-
-/* Primary Button (Orange) */
-button[class*="Button-primary"], 
-button[class*="Button-blue"] {
-    background-color: var(--hs-orange) !important;
-    border: 1px solid var(--hs-orange) !important;
-    color: white !important;
-}
-
-button[class*="Button-primary"]:hover {
-    background-color: #ff8f73 !important;
-    transform: translateY(-1px);
-}
-
-/* Cards & Containers */
-div[class*="Card"], div[class*="ControlContainer"] {
-    background: white !important;
-    border: 1px solid var(--hs-border) !important;
-    border-radius: 3px !important;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02) !important;
-    margin-bottom: 20px !important;
-}
-
-/* Inputs */
-input, textarea, select {
-    border: 1px solid var(--hs-border) !important;
-    border-radius: 3px !important;
-    padding: 10px 12px !important;
-    transition: border-color 0.2s ease !important;
-}
-
-input:focus {
-    border-color: var(--hs-orange) !important;
-    outline: none !important;
-    box-shadow: 0 0 0 2px rgba(255, 122, 89, 0.2) !important;
-}
-
-/* Dashboard Logo or Brand info */
-h1 {
-    font-weight: 700 !important;
+nav[class*="Sidebar"] a:hover {
+    background-color: #eaf0f6 !important;
     color: var(--hs-blue) !important;
 }
 
-/* Clean up the grid */
-div[class*="Grid"] {
-    gap: 24px !important;
+nav[class*="Sidebar"] a[aria-current="page"] {
+    background-color: #eaf0f6 !important;
+    color: var(--hs-orange) !important;
+}
+
+/* 4. HubSpot "Save" Button */
+button[class*="Button-primary"], 
+button[data-variant="primary"] {
+    background-color: var(--hs-orange) !important;
+    border: 1px solid var(--hs-orange) !important;
+    color: white !important;
+    border-radius: 3px !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    padding: 10px 24px !important;
+}
+
+button[class*="Button-primary"]:hover {
+    background-color: var(--hs-orange-hover) !important;
+    box-shadow: 0 4px 12px rgba(255, 122, 89, 0.2) !important;
+}
+
+/* 5. Field Groups (The "Settings Space") */
+div[class*="ControlContainer"] {
+    background: var(--hs-white) !important;
+    border: 1px solid var(--hs-border) !important;
+    border-radius: 4px !important;
+    margin-bottom: 30px !important;
+    transition: border-color 0.2s ease;
+}
+
+div[class*="ControlContainer"]:hover {
+    border-color: #a3b6cc !important;
+}
+
+/* 6. Headers */
+header[class*="Header"] {
+    background: var(--hs-white) !important;
+    border-bottom: 1px solid var(--hs-border) !important;
+}
+
+/* 7. Label Styling */
+label {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #516f90 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Premium Suite Header */
+body::before {
+    content: 'LIVIA CONTENT ENGINE | PREMIUM MARKETING SUITE';
+    background: var(--hs-blue);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

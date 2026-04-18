@@ -19,16 +19,24 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     view_url: "https://liviamperfect.web.app/blog/{{id}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Author", name: "author", widget: "string", default: "Livia Team"}
-      - {label: "Seo Description", name: "description", widget: "text"}
-      - label: "Category"
-        name: "tag"
-        widget: "select"
-        options: ["Insights", "Marketing", "RevOps", "Ads", "Branding"]
-        create: true # Allows the user to add new categories in the future
-        default: "Insights"
-      - {label: "Featured Post", name: "featured", widget: "boolean", default: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "1. FOCUS: Writing Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Write your main content here. Headlines (h2, h3) will automatically build your Table of Contents."
+      
+      - label: "2. SETTINGS & SEO"
+        name: "settings"
+        widget: "object"
+        fields:
+          - {label: "Post Title", name: "title", widget: "string"}
+          - {label: "Display Date", name: "date", widget: "datetime"}
+          - {label: "Card Image", name: "image", widget: "image", required: false}
+          - {label: "Author Name", name: "author", widget: "string", default: "Livia Team"}
+          - {label: "SEO Description", name: "description", widget: "text"}
+          - label: "Category"
+            name: "tag"
+            widget: "select"
+            options: ["Insights", "Marketing", "RevOps", "Ads", "Branding"]
+            create: true
+            default: "Insights"
+          - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: false}

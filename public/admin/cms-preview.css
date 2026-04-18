@@ -1,37 +1,94 @@
-/* CMS Preview Styling - Matches the main site look */
+/* 
+   High-Fidelity "Direct in Editor" Preview 
+   Mirrors the Livia Makes Perfect website aesthetics 1:1.
+*/
+
+:root {
+  --brand:       #FF3366;
+  --bg:          #fcfcfc;
+  --text:        #1a1523;
+  --text-muted:  #64748b;
+  --font-body:   'Inter', sans-serif;
+  --font-display:'Playfair Display', serif;
+}
+
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  color: #111;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  padding: 3rem 2rem !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
-}
-
+/* Metadata Bar */
 .preview-meta {
-  color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 2px;
+  color: var(--brand);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
+/* Luxury Headline */
+h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem !important;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Featured Image */
 img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin: 2rem 0;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin: 3rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
 }
 
+/* Article Content Body */
 .content {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
 }
 
-.content h2 { margin-top: 2rem; margin-bottom: 1rem; }
-.content p { margin-bottom: 1.2rem; }
+.content h2 { 
+  font-family: var(--font-display);
+  margin: 3.5rem 0 1.5rem; 
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.content p { margin-bottom: 1.8rem; }
+
+.content strong { color: var(--brand); font-weight: 700; }
+
+.content blockquote {
+  border-left: 4px solid var(--brand);
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0;
+  background: #f9f9f9;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #555;
+  border-radius: 0 10px 10px 0;
+}
+
+/* CTA Mockup in Preview */
+.cta-mockup {
+  margin-top: 5rem;
+  padding: 3rem;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 24px;
+  text-align: center;
+}
