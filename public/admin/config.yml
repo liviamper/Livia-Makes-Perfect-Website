@@ -19,24 +19,27 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     view_url: "https://liviamperfect.web.app/blog/{{id}}"
     fields:
+      - {label: "Main Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      
       - label: "1. FOCUS: Writing Body"
         name: "body"
         widget: "markdown"
         hint: "Write your main content here. Headlines (h2, h3) will automatically build your Table of Contents."
       
-      - label: "2. SETTINGS & SEO"
-        name: "settings"
-        widget: "object"
-        fields:
-          - {label: "Post Title", name: "title", widget: "string"}
-          - {label: "Display Date", name: "date", widget: "datetime"}
-          - {label: "Card Image", name: "image", widget: "image", required: false}
-          - {label: "Author Name", name: "author", widget: "string", default: "Livia Team"}
-          - {label: "SEO Description", name: "description", widget: "text"}
-          - label: "Category"
-            name: "tag"
-            widget: "select"
-            options: ["Insights", "Marketing", "RevOps", "Ads", "Branding"]
-            create: true
-            default: "Insights"
-          - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: false}
+      - label: "2. SETTINGS & SEO (Metadata)"
+        name: "description"
+        widget: "text"
+        hint: "Used for Google Search results and social sharing."
+
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Author Name", name: "author", widget: "string", default: "Livia Team"}
+      
+      - label: "Category"
+        name: "tag"
+        widget: "select"
+        options: ["Insights", "Marketing", "RevOps", "Ads", "Branding"]
+        create: true
+        default: "Insights"
+      
+      - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: false}

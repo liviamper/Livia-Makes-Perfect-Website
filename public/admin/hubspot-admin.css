@@ -1,110 +1,100 @@
 /* 
-   HubSpot-Inspired Agency Dashboard Theme (Phase 3 - Professional Light Mode)
-   Focus: Zero clutter, high speed, and HubSpot-style interactions.
+   HUB SPOT "TOTAL LIGHT MODE" ENGINE 
+   Aggressive override to force Sveltia/Decap into a premium white interface.
 */
 
+/* 1. Force the Browser to Light Mode */
 :root {
-    --hs-orange: #ff7a59;
-    --hs-orange-hover: #ff8f73;
-    --hs-blue: #2e475d;
-    --hs-gray-bg: #f5f8fa;
-    --hs-border: #cbd6e2;
-    --hs-text: #33475b;
-    --hs-white: #ffffff;
+  color-scheme: light !important;
+  --hs-orange: #ff7a59;
+  --hs-blue: #2e475d;
+  --hs-bg: #f5f8fa;
+  --hs-border: #cbd6e2;
+  --hs-text: #33475b;
 }
 
-/* 1. Global Light Mode Force */
-body {
-    background-color: var(--hs-gray-bg) !important;
-    font-family: 'Inter', sans-serif !important;
-    color: var(--hs-text) !important;
+/* 2. Global Background & Text Flash-over */
+html, body, #nc-root {
+  background-color: var(--hs-bg) !important;
+  color: var(--hs-text) !important;
 }
 
-/* 2. Hide Side Preview (Focus Mode) */
-main[class*="PreviewPane"], 
-div[class*="PaneContainer-preview"] {
-    display: none !important;
+/* 3. Hide BOTH Preview Panes (Side and Bottom) */
+[class*="PaneContainer-preview"], 
+[class*="PreviewPane"], 
+[class*="EditorPreviewPane"],
+div[data-testid="preview-pane"] {
+  display: none !important;
+  width: 0 !important;
+  flex: 0 !important;
 }
 
-/* 3. Sidebar - Light & Professional */
-nav[class*="Sidebar"] {
-    background-color: var(--hs-white) !important;
-    border-right: 1px solid var(--hs-border) !important;
-    box-shadow: none !important;
+/* 4. Force Editor Width to 100% */
+[class*="PaneContainer-control"], 
+[class*="EditorControlPane"] {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* 5. Sidebar - Force White/Light Gray */
+nav[class*="Sidebar"], 
+aside[class*="Sidebar"] {
+  background-color: #ffffff !important;
+  border-right: 1px solid var(--hs-border) !important;
+  box-shadow: none !important;
 }
 
 nav[class*="Sidebar"] a {
-    color: var(--hs-text) !important;
-    font-weight: 500 !important;
-    padding: 10px 20px !important;
-    border-radius: 4px !important;
-    margin: 4px 10px !important;
+  color: var(--hs-text) !important;
 }
 
-nav[class*="Sidebar"] a:hover {
-    background-color: #eaf0f6 !important;
-    color: var(--hs-blue) !important;
-}
-
+nav[class*="Sidebar"] a:hover, 
 nav[class*="Sidebar"] a[aria-current="page"] {
     background-color: #eaf0f6 !important;
     color: var(--hs-orange) !important;
 }
 
-/* 4. HubSpot "Save" Button */
-button[class*="Button-primary"], 
-button[data-variant="primary"] {
-    background-color: var(--hs-orange) !important;
-    border: 1px solid var(--hs-orange) !important;
-    color: white !important;
-    border-radius: 3px !important;
-    text-transform: none !important;
-    font-weight: 600 !important;
-    padding: 10px 24px !important;
+/* 6. Heavy Reset for Input Fields (No more dark boxes) */
+div[class*="ControlContainer"], 
+div[class*="Field"], 
+section[class*="Section"] {
+  background: white !important;
+  color: var(--hs-text) !important;
+  border: 1px solid var(--hs-border) !important;
 }
 
-button[class*="Button-primary"]:hover {
-    background-color: var(--hs-orange-hover) !important;
-    box-shadow: 0 4px 12px rgba(255, 122, 89, 0.2) !important;
+input, textarea, select, .editor-control {
+  background-color: #ffffff !important;
+  color: var(--hs-text) !important;
+  border: 1px solid var(--hs-border) !important;
 }
 
-/* 5. Field Groups (The "Settings Space") */
-div[class*="ControlContainer"] {
-    background: var(--hs-white) !important;
-    border: 1px solid var(--hs-border) !important;
-    border-radius: 4px !important;
-    margin-bottom: 30px !important;
-    transition: border-color 0.2s ease;
-}
-
-div[class*="ControlContainer"]:hover {
-    border-color: #a3b6cc !important;
-}
-
-/* 6. Headers */
+/* 7. The "HubSpot" Top Bar Header */
 header[class*="Header"] {
-    background: var(--hs-white) !important;
-    border-bottom: 1px solid var(--hs-border) !important;
+  background: white !important;
+  border-bottom: 1px solid var(--hs-border) !important;
+  color: var(--hs-blue) !important;
 }
 
-/* 7. Label Styling */
-label {
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    color: #516f90 !important;
-    margin-bottom: 8px !important;
+/* 8. Make the primary buttons BIG and ORANGE */
+button[class*="Button-primary"] {
+    background-color: var(--hs-orange) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    padding: 10px 30px !important;
 }
 
-/* Premium Suite Header */
+/* 9. Header Branding Strip */
 body::before {
-    content: 'LIVIA CONTENT ENGINE | PREMIUM MARKETING SUITE';
+    content: 'LIVIA CONTENT ENGINE | PROFESSIONAL AD OPS MODE';
     background: var(--hs-blue);
     color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
 }
