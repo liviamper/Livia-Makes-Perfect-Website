@@ -49,60 +49,75 @@ const schema = {
   <!-- SEO Schema -->
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <article class="section container fade-in" style="max-width: 900px;">
+  <article class="section container fade-in" style="max-width: 1200px;">
     <!-- Article Header -->
     <header class="text-center" style="margin-bottom: 4rem;">
       <p class="section-label">{entry.data.tag} • {new Date(entry.data.date).toLocaleDateString()}</p>
       <h1 class="hero-headline" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-top: 1rem;">{entry.data.title}</h1>
-      <p style="color: var(--text-muted); font-size: 1.25rem; max-width: 700px; margin: 1.2rem auto 2.5rem;">{entry.data.description}</p>
+      <p style="color: var(--text-muted); font-size: 1.25rem; max-width: 850px; margin: 1.2rem auto 2.5rem;">{entry.data.description}</p>
       
       <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">
           {entry.data.author.charAt(0)}
         </div>
         <div style="text-align: left;">
-          <div style="font-weight: 600; font-size: 1rem;">{entry.data.author}</div>
-          <div style="font-size: 0.85rem; color: var(--text-muted);">Marketing Strategist</div>
+          <div style="font-weight: 700; font-size: 1.1rem; color: var(--text);">{entry.data.author}</div>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">Marketing Strategist</div>
         </div>
       </div>
     </header>
 
-    <!-- Table of Contents (Premium Look) -->
-    {tocItems.length > 0 && (
-      <nav class="toc-container" style="background: #fdfdfd; border: 1px solid var(--border); border-radius: 18px; padding: 2rem; margin-bottom: 4rem;">
-        <h4 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--brand); margin-bottom: 1.25rem;">Table of Contents</h4>
-        <ul style="list-style: none; padding: 0;">
-          {tocItems.map(item => (
-            <li style={`margin-bottom: 0.75rem; padding-left: ${item.depth === 3 ? '1.5rem' : '0'};`}>
-              <a href={`#${item.slug}`} style="font-size: 1rem; color: var(--text-muted); font-weight: 500; transition: color 300ms ease;" onmouseover="this.style.color='#FF3366'" onmouseout="this.style.color=''">
-                {item.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )}
+    <!-- Layout Container: Sidebar TOC + Content -->
+    <div class="blog-layout" style="display: grid; grid-template-columns: 320px 1fr; gap: 4rem; align-items: start;">
+      <!-- Sticky Sidebar TOC -->
+      <aside class="blog-sidebar" style="position: sticky; top: 120px; align-self: start;">
+        {tocItems.length > 0 && (
+          <nav class="toc-container" style="background: #fdfdfd; border: 1px solid var(--border); border-radius: 20px; padding: 2rem;">
+            <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--brand); margin-bottom: 1.5rem; font-weight: 800;">Inside this Article</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              {tocItems.map(item => (
+                <li style={`margin-bottom: 1rem; padding-left: ${item.depth === 3 ? '1.25rem' : '0'};`}>
+                  <a href={`#${item.slug}`} style="font-size: 0.95rem; color: var(--text-muted); font-weight: 500; transition: all 300ms ease; text-decoration: none; line-height: 1.4; display: block;" class="toc-link">
+                    {item.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+        
+        <!-- Sidebar CTA -->
+        <div style="margin-top: 2rem; padding: 2rem; background: var(--text); color: white; border-radius: 20px; text-align: center;" class="sidebar-cta">
+          <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--brand); font-weight: 700; margin-bottom: 1rem;">Livia Strategy</p>
+          <h5 style="font-size: 1.2rem; margin-bottom: 1.5rem; line-height: 1.3;">Scale your performance marketing.</h5>
+          <a href="/contact" style="display: block; background: var(--brand); color: white; text-decoration: none; padding: 0.8rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem;">Get Started</a>
+        </div>
+      </aside>
 
-    <!-- Featured Image -->
-    {entry.data.image && (
-      <div style="margin-bottom: 4rem; border-radius: 20px; overflow: hidden; border: 1px solid var(--border);">
-        <img src={entry.data.image} alt={entry.data.title} style="width: 100%; height: auto; display: block;" />
-      </div>
-    )}
+      <!-- Main Article Column -->
+      <div class="blog-main-content">
+        <!-- Featured Image -->
+        {entry.data.image && (
+          <div style="margin-bottom: 3.5rem; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <img src={entry.data.image} alt={entry.data.title} style="width: 100%; height: auto; display: block;" />
+          </div>
+        )}
 
-    <!-- Content -->
-    <div class="blog-content" style="font-size: 1.25rem; line-height: 1.8;">
-      <Content />
-    </div>
+        <!-- Content Body -->
+        <div class="blog-content" style="font-size: 1.25rem; line-height: 1.9;">
+          <Content />
+        </div>
 
-    <!-- Article Footer / CTA -->
-    <div style="margin-top: 6rem; padding: 4rem 2rem; background: #fdfdfd; border: 1px solid var(--border); border-radius: 30px; text-align: center;">
-      <p class="section-label">Ready to Grow?</p>
-      <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Let's apply these strategies to your business</h3>
-      <p style="margin-bottom: 3rem; color: var(--text-muted); max-width: 500px; margin-left: auto; margin-right: auto;">Schedule a free 15-minute consultation with the Livia Team to audit your current performance.</p>
-      <div style="display:flex; gap: 1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
-        <a href="mailto:liviamper@gmail.com" class="btn btn-outline btn-lg">Contact Agent</a>
+        <!-- Article Footer / CTA -->
+        <div style="margin-top: 6rem; padding: 4rem 2rem; background: #fdfdfd; border: 1px solid var(--border); border-radius: 30px; text-align: center;">
+          <p class="section-label">Ready to Grow?</p>
+          <h3 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1.5rem; line-height: 1.2;">Let's apply these strategies to your business</h3>
+          <p style="margin-bottom: 3rem; color: var(--text-muted); max-width: 550px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">Schedule a free 15-minute consultation with the Livia Team to audit your current performance advertising.</p>
+          <div style="display:flex; gap: 1rem; justify-content:center; flex-wrap:wrap;">
+            <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+            <a href="mailto:liviamper@gmail.com" class="btn btn-outline btn-lg">Contact Agent</a>
+          </div>
+        </div>
       </div>
     </div>
   </article>
