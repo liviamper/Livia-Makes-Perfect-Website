@@ -2,7 +2,8 @@ backend:
   name: github
   repo: liviamper/Livia-Makes-Perfect-Website
   branch: main
-  base_url: https://liviamperfect.web.app # Add your Netlify URL or custom auth proxy if needed. Netlify Identity works best.
+  base_url: https://liviamperfect.web.app # Kept for safety
+  app_id: PASTE_YOUR_GITHUB_CLIENT_ID_HERE
 
 local_backend: true
 
