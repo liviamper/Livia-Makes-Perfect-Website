@@ -1,27 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-// This is a placeholder for Decap CMS integration. Later, we'll fetch these from markdown files.
-const posts = [
-  {
-    title: "How RevOps Bridges the Gap Between Sales & Marketing",
-    description: "Discover why traditional silos are killing your revenue potential and how a Revenue Operations framework inside HubSpot can track your true ROI.",
-    tag: "RevOps",
-    icon: "📊"
-  },
-  {
-    title: "Cracking the Meta Ads Algorithm in 2026",
-    description: "A statistical breakdown of our most successful CTR campaigns — the exact creative frameworks and targeting rules we use to lower acquisition costs.",
-    tag: "Performance Ads",
-    icon: "🎯"
-  },
-  {
-    title: "The Psychology of Design: Why Aesthetics Convert",
-    description: "Why aesthetic motion graphics convert faster than static text — and a behind-the-scenes look at visuals featured at the National Retail Federation.",
-    tag: "Content Strategy",
-    icon: "🎨"
-  }
-];
+// Fetch all posts from the blog collection
+const blogEntries = await getCollection('blog');
+
+// Sort by date descending
+const posts = blogEntries.sort((a, b) => 
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
 <Layout 
@@ -40,15 +27,21 @@ const posts = [
     <div class="blog-grid">
       {posts.map(post => (
         <article class="blog-card">
-          <div class="blog-thumb" style="font-size:3rem;">{post.icon}</div>
+          <div class="blog-thumb" style="font-size:3rem;">{post.data.icon || '📝'}</div>
           <div class="blog-body">
-            <div class="blog-tag">{post.tag}</div>
-            <h4>{post.title}</h4>
-            <p>{post.description}</p>
-            <a href="#" class="blog-link">Read Article →</a>
+            <div class="blog-tag">{post.data.tag}</div>
+            <h4>{post.data.title}</h4>
+            <p>{post.data.description}</p>
+            <a href={`/blog/${post.slug}`} class="blog-link">Read Article →</a>
           </div>
         </article>
       ))}
+      
+      {posts.length === 0 && (
+        <p class="text-center" style="grid-column: 1 / -1; color: var(--text-muted);">
+          No posts yet. Check back soon for more insights!
+        </p>
+      )}
     </div>
   </section>
 

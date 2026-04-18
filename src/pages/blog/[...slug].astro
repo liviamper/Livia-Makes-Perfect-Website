@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={`${entry.data.title} | Livia Makes Perfect`}
+  description={entry.data.description}
+  canonicalUrl={`https://liviamperfect.web.app/blog/${entry.slug}`}
+>
+  <article class="section container fade-in" style="max-width: 800px;">
+    <div class="text-center" style="margin-bottom: 4rem;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">{entry.data.icon || '📝'}</div>
+      <div class="blog-tag">{entry.data.tag}</div>
+      <h1 class="hero-headline" style="font-size: clamp(2.5rem, 6vw, 4rem);">{entry.data.title}</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem;">Published on {new Date(entry.data.date).toLocaleDateString()}</p>
+    </div>
+
+    <div class="blog-content" style="font-size: 1.15rem; line-height: 1.8;">
+      <Content />
+    </div>
+
+    <div style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border); text-align: center;">
+      <h3>Enjoyed this insight?</h3>
+      <p style="margin-bottom: 2rem; color: var(--text-muted);">Let's discuss how we can apply these strategies to your business.</p>
+      <a href="/contact" class="btn btn-primary">Get a Free Consultation</a>
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* Basic markdown styling for blog posts */
+  .blog-content h2 { margin: 2.5rem 0 1.5rem; }
+  .blog-content h3 { margin: 2rem 0 1rem; }
+  .blog-content p { margin-bottom: 1.5rem; }
+  .blog-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; list-style: disc; }
+  .blog-content li { margin-bottom: 0.5rem; }
+  .blog-content strong { color: var(--brand); }
+</style>

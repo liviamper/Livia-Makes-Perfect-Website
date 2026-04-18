@@ -3,7 +3,7 @@ backend:
   repo: liviamper/Livia-Makes-Perfect-Website
   branch: main
   base_url: https://liviamperfect.web.app # Kept for safety
-  app_id: PASTE_YOUR_GITHUB_CLIENT_ID_HERE
+  app_id: Ov23lii5yOlDXX336xhy
 
 local_backend: true
 
