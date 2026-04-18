@@ -1,6 +1,15 @@
 {
   "hosting": {
     "public": "dist",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/:page.html",
+        "destination": "/:page",
+        "type": 301
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
