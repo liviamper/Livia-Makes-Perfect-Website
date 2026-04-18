@@ -4,9 +4,10 @@ export interface Props {
   description: string;
   keywords?: string;
   canonicalUrl?: string;
+  noindex?: boolean;
 }
 
-const { title, description, keywords, canonicalUrl } = Astro.props;
+const { title, description, keywords, canonicalUrl, noindex = false } = Astro.props;
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -27,6 +28,8 @@ import Footer from '../components/Footer.astro';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  {noindex && <meta name="robots" content="noindex, nofollow">}
+
   <!-- Primary SEO -->
   <title>{title}</title>
   <meta name="description" content={description}>
