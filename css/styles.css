@@ -96,7 +96,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero-visual { position: relative; margin: 0 auto; max-width: 1000px; perspective: 1000px; }
 .dashboard-wrapper {
-.dashboard-wrapper {
   border-radius: var(--radius-lg); overflow: hidden;
   border: 1px solid var(--color-border); box-shadow: var(--shadow-depth);
   transition: transform var(--transition-smooth);
@@ -120,17 +119,26 @@ img { max-width: 100%; height: auto; display: block; }
 .founder-name { font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;}
 
 /* Services Grid */
-.services-grid { display: grid; gap: var(--spacing-lg); grid-template-columns: 1fr; margin-bottom: var(--spacing-2xl); }
+.services-grid { 
+  display: grid; gap: var(--spacing-lg); grid-template-columns: 1fr; margin-bottom: var(--spacing-2xl); 
+}
 @media (min-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1024px) { .services-grid { grid-template-columns: 1fr 1fr 1fr; } }
 
-.service-card { border-radius: var(--radius-lg); padding: var(--spacing-xl) var(--spacing-md); text-align: center; border-top: 2px solid transparent; transition: all 0.3s ease; }
-.service-card:hover { border-top-color: var(--color-accent-primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.service-card { 
+  display: flex; flex-direction: column; 
+  border-radius: var(--radius-lg); padding: var(--spacing-xl) var(--spacing-md); 
+  text-align: center; border: 1px solid var(--color-border); background: var(--color-bg-surface); 
+  transition: all 0.3s ease; 
+}
+.service-card:hover { border-color: var(--color-accent-primary); transform: translateY(-5px); box-shadow: var(--shadow-depth); }
 .service-card h4 { font-size: 1.5rem; margin-bottom: 1rem; }
 .service-card p { color: var(--color-text-secondary); font-size: 1rem; line-height: 1.6; }
 
 /* Metrics Showcase */
-.metrics-showcase { display: grid; gap: var(--spacing-lg); grid-template-columns: 1fr; margin-bottom: var(--spacing-2xl); }
+.metrics-showcase { 
+  display: grid; gap: var(--spacing-lg); grid-template-columns: 1fr; margin-bottom: var(--spacing-2xl); 
+}
 @media (min-width: 768px) { .metrics-showcase { grid-template-columns: 1fr 1fr; } }
 .metric-box { border-radius: var(--radius-lg); padding: var(--spacing-lg); border: 1px solid var(--color-border); background: var(--color-bg-surface); text-align: center; }
 .metric-box h4 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-text-primary); }
@@ -138,7 +146,12 @@ img { max-width: 100%; height: auto; display: block; }
 .metric-placeholder img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: none; }
 
 /* Brand Grid Images */
-.brand-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem 4rem; margin-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl); }
+.brand-grid { 
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem 4rem; margin-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl); 
+}
+.brand-logo-item { height: 40px; filter: grayscale(100%) opacity(0.6); transition: filter var(--transition-smooth), transform var(--transition-smooth); cursor: pointer; max-width: 140px; object-fit: contain; }
+.brand-logo-item:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
+.brand-logo-placeholder { font-family: var(--font-family-sans); font-size: 1.1rem; font-weight: 600; color: var(--color-text-muted); white-space: nowrap; border: 1px solid var(--color-border); padding: 0.6rem 1.2rem; border-radius: var(--radius-sm); }
 .brand-logo-item { height: 40px; filter: grayscale(100%) opacity(0.6); transition: filter var(--transition-smooth), transform var(--transition-smooth); cursor: pointer; max-width: 140px; object-fit: contain; }
 .brand-logo-item:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
 .brand-logo-placeholder { font-family: var(--font-family-sans); font-size: 1.1rem; font-weight: 600; color: var(--color-text-muted); white-space: nowrap; border: 1px solid var(--color-border); padding: 0.6rem 1.2rem; border-radius: var(--radius-sm); }
