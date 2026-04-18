@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: liviamper/Livia-Makes-Perfect-Website
+  branch: main
+  base_url: https://liviamperfect.web.app # Add your Netlify URL or custom auth proxy if needed. Netlify Identity works best.
+
+local_backend: true
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://liviamperfect.web.app
+logo_url: https://liviamperfect.web.app/assets/images/social.png
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Seo Description", name: "description", widget: "text"}
+      - {label: "Icon (Emoji)", name: "icon", widget: "string", default: "📝"}
+      - {label: "Category/Tag", name: "tag", widget: "string", default: "Insights"}
+      - {label: "Body", name: "body", widget: "markdown"}

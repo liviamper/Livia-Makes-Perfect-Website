@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contact Us — Get a Free Quote | Livia Makes Perfect Agency"
+  description="Ready to grow your business? Contact the Livia Makes Perfect team for a free digital marketing strategy consultation and custom quote. We reply within 24 hours."
+  keywords="contact digital marketing agency, get a marketing quote, hire RevOps agency, HubSpot consultant"
+  canonicalUrl="https://liviamperfect.web.app/contact"
+>
+  <section class="page-hero container fade-in">
+    <p class="section-label">Let's Work Together</p>
+    <h1>Get a <span class="text-brand">Quote</span></h1>
+    <p>Tell us about your business goals. We usually respond within 24 hours with a tailored strategy.</p>
+  </section>
+
+  <section class="section container fade-in">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Direct Contact</h3>
+        <p>We are a team of digital marketing strategists and technologists. Reach us directly or fill the form.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <label>Email Us At</label>
+            <a href="mailto:liviamper@gmail.com">liviamper@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <label>Call Us</label>
+            <a href="tel:+918019237242">+91 80192 37242</a>
+          </div>
+          <div class="contact-item">
+            <label>Location</label>
+            <span>Digital First · Serving Globally</span>
+          </div>
+          <div class="contact-item">
+            <label>Response Time</label>
+            <span>Within 24 hours</span>
+          </div>
+          <div class="contact-item">
+            <label>Follow Us</label>
+            <div style="display:flex; gap:1rem; margin-top:0.25rem;">
+              <a href="https://in.linkedin.com/company/liviamakesperfect" target="_blank" rel="noopener" style="color:var(--brand); font-weight:600;">LinkedIn ↗</a>
+              <a href="https://www.instagram.com/liviamper/" target="_blank" rel="noopener" style="color:var(--brand); font-weight:600;">Instagram ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-card">
+        <form action="https://formsubmit.co/liviamper@gmail.com" method="POST" class="form-group" id="contactForm">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="New Quote Request — Livia Makes Perfect">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://liviamperfect.web.app/thanks">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+
+          <!-- Form fields -->
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Full Name" required class="form-input">
+            <input type="email" name="email" placeholder="Work Email" required class="form-input">
+          </div>
+          <input type="tel" name="phone" placeholder="Phone Number (optional)" class="form-input">
+          <input type="text" name="company" placeholder="Company Name" class="form-input">
+          <select name="service" class="form-input" required>
+            <option value="" disabled selected>Which service are you interested in?</option>
+            <option value="revops">Revenue Operations (RevOps)</option>
+            <option value="ads">Performance Advertising (Meta/Google)</option>
+            <option value="creative">Graphic / Video Production</option>
+            <option value="social">Social Media Management</option>
+            <option value="content">Content Production</option>
+            <option value="other">General / Multiple Services</option>
+          </select>
+          <select name="budget" class="form-input">
+            <option value="" disabled selected>Monthly Budget Range (optional)</option>
+            <option value="under-500">Under $500</option>
+            <option value="500-2000">$500 – $2,000</option>
+            <option value="2000-5000">$2,000 – $5,000</option>
+            <option value="5000+">$5,000+</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your project, goals, or current bottlenecks..." class="form-input" required></textarea>
+          <button type="submit" class="btn btn-primary form-submit">Submit Inquiry — Get a Quote</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

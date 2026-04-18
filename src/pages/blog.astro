@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// This is a placeholder for Decap CMS integration. Later, we'll fetch these from markdown files.
+const posts = [
+  {
+    title: "How RevOps Bridges the Gap Between Sales & Marketing",
+    description: "Discover why traditional silos are killing your revenue potential and how a Revenue Operations framework inside HubSpot can track your true ROI.",
+    tag: "RevOps",
+    icon: "📊"
+  },
+  {
+    title: "Cracking the Meta Ads Algorithm in 2026",
+    description: "A statistical breakdown of our most successful CTR campaigns — the exact creative frameworks and targeting rules we use to lower acquisition costs.",
+    tag: "Performance Ads",
+    icon: "🎯"
+  },
+  {
+    title: "The Psychology of Design: Why Aesthetics Convert",
+    description: "Why aesthetic motion graphics convert faster than static text — and a behind-the-scenes look at visuals featured at the National Retail Federation.",
+    tag: "Content Strategy",
+    icon: "🎨"
+  }
+];
+---
+
+<Layout 
+  title="Blog & Digital Marketing Insights | Livia Makes Perfect"
+  description="Actionable strategies on RevOps, Meta Ads, HubSpot, social media growth and content marketing from the Livia Makes Perfect agency team."
+  keywords="digital marketing blog, RevOps tips, Meta Ads strategy, HubSpot tips, social media growth, content marketing"
+  canonicalUrl="https://liviamperfect.web.app/blog"
+>
+  <section class="page-hero container fade-in">
+    <p class="section-label">Insights & Ideas</p>
+    <h1>Digital <span class="text-brand">Insights</span></h1>
+    <p>Actionable strategies, marketing trends, and deep-dives into RevOps and performance advertising.</p>
+  </section>
+
+  <section class="section container fade-in">
+    <div class="blog-grid">
+      {posts.map(post => (
+        <article class="blog-card">
+          <div class="blog-thumb" style="font-size:3rem;">{post.icon}</div>
+          <div class="blog-body">
+            <div class="blog-tag">{post.tag}</div>
+            <h4>{post.title}</h4>
+            <p>{post.description}</p>
+            <a href="#" class="blog-link">Read Article →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-section fade-in">
+    <div class="container">
+      <p class="section-label">Scale Your Business</p>
+      <h2>Ready to grow?</h2>
+      <p>Let's turn these insights into action for your business.</p>
+      <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,16 @@
+---
+const pathname = Astro.url.pathname;
+const currentPath = pathname.slice(1); // remove the leading slash
+---
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span>Livia</span> Makes Perfect</a>
+    <nav class="main-nav">
+      <a href="/services" class={currentPath === 'services' ? 'active' : ''}>Services</a>
+      <a href="/clients" class={currentPath === 'clients' ? 'active' : ''}>Clients</a>
+      <a href="/blog" class={currentPath.startsWith('blog') ? 'active' : ''}>Blog</a>
+      <a href="/contact" class={currentPath === 'contact' ? 'active' : ''}>Contact</a>
+    </nav>
+    <a href="/contact" class="btn btn-primary">Get a Quote</a>
+  </div>
+</header>

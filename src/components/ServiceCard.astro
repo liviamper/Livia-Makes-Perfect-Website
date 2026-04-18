@@ -1,0 +1,16 @@
+---
+export interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  delayClass?: string;
+  id?: string;
+}
+
+const { icon, title, description, delayClass = '', id } = Astro.props;
+---
+<div class={`service-card fade-in ${delayClass}`} id={id}>
+  <div class="icon">{icon}</div>
+  <h4>{title}</h4>
+  <p set:html={description}></p>
+</div>

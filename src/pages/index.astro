@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<Layout 
+  title="Livia Makes Perfect | Digital Marketing & RevOps Agency"
+  description="Your all-in-one Digital Marketing & Revenue Operations agency. We build data-driven strategies across Meta Ads, HubSpot, social media, video and content production."
+  keywords="digital marketing agency, RevOps, HubSpot, social media management, performance ads, Meta Ads, content production, video production, revenue operations"
+  canonicalUrl="https://liviamperfect.web.app/"
+>
+  <!-- ===== HERO ===== -->
+  <section class="hero container fade-in">
+    <p class="section-label">Digital Marketing & Revenue Operations</p>
+    <h1 class="hero-headline">Make your business<br><span class="text-brand">Live-via</span> with Livia</h1>
+    <p class="hero-sub">Your All-in-One Digital Marketing & Revenue Operations Solution. We build data-driven strategies with action plans to achieve your goals in minimum time & budget.</p>
+    <div class="hero-actions">
+      <a href="/services" class="btn btn-primary btn-lg">View Our Services</a>
+      <a href="/contact" class="btn btn-outline btn-lg">Get a Quote</a>
+    </div>
+    <div class="hero-visual">
+      <img src="/assets/images/social.png" alt="Livia Makes Perfect - Digital Marketing Creative Visual">
+    </div>
+  </section>
+
+  <!-- ===== CLIENT LOGO TICKER ===== -->
+  <section class="logo-ticker-section">
+    <p class="logo-ticker-label">Trusted by industry leaders</p>
+    <div class="logo-ticker-track">
+      <div class="logo-ticker-inner">
+        <!-- First set -->
+        <span class="brand-chip">InvestMindset</span>
+        <span class="brand-chip">Novamil</span>
+        <span class="brand-chip">Mittal Institute</span>
+        <span class="brand-chip">Shishupuram</span>
+        <span class="brand-chip">Hotwax</span>
+        <span class="brand-chip">iWoman TV</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="brand-chip">InvestMindset</span>
+        <span class="brand-chip">Novamil</span>
+        <span class="brand-chip">Mittal Institute</span>
+        <span class="brand-chip">Shishupuram</span>
+        <span class="brand-chip">Hotwax</span>
+        <span class="brand-chip">iWoman TV</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES PREVIEW ===== -->
+  <section class="section container fade-in">
+    <div class="text-center">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Services That Drive Results</h2>
+      <p class="section-subtitle">From RevOps to content — we handle the full digital stack.</p>
+    </div>
+    <div class="services-grid">
+      <ServiceCard 
+        icon="📈" 
+        title="Revenue Operations" 
+        description="Aligning data, processes, and teams via Salesforce & HubSpot to drive predictable, scalable revenue."
+        delayClass="delay-1"
+      />
+      <ServiceCard 
+        icon="🎨" 
+        title="Graphics & Branding" 
+        description="From social media visuals to full brand identity — professional design that commands attention."
+        delayClass="delay-2"
+      />
+      <ServiceCard 
+        icon="🎬" 
+        title="Video & Animations" 
+        description="Our videos have been featured at the National Retail Federation, NY. Motion graphics that convert."
+        delayClass="delay-3"
+      />
+      <ServiceCard 
+        icon="📣" 
+        title="Social Media Management" 
+        description="Scheduling, engagement, and audience growth across all platforms — done for you."
+      />
+      <ServiceCard 
+        icon="✍️" 
+        title="Content Production" 
+        description="Content writing, video creation, editing, and account architecture setup — end-to-end."
+      />
+      <ServiceCard 
+        icon="🚀" 
+        title="Performance Ads" 
+        description="High ROI ad campaigns across Meta and Google — built on data, optimized for growth."
+      />
+    </div>
+    <div class="text-center" style="margin-top:2rem;">
+      <a href="/services" class="btn btn-outline">View All Services →</a>
+    </div>
+  </section>
+
+  <!-- ===== METRICS PREVIEW ===== -->
+  <section class="section container fade-in">
+    <div class="text-center">
+      <p class="section-label">Results</p>
+      <h2 class="section-title">Data-Driven Growth</h2>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h4>Meta Ads ROI Snapshot</h4>
+        <div class="metric-placeholder">
+          <span>📊</span>
+          <span>Drop your Meta Ads screenshot here</span>
+          <span style="font-size:0.8rem;font-family:monospace;color:#ccc;">/assets/images/meta-metrics.png</span>
+        </div>
+      </div>
+      <div class="metric-card">
+        <h4>HubSpot RevOps Analytics</h4>
+        <div class="metric-placeholder">
+          <span>📊</span>
+          <span>Drop your HubSpot dashboard screenshot here</span>
+          <span style="font-size:0.8rem;font-family:monospace;color:#ccc;">/assets/images/hubspot-metrics.png</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:2.5rem;">
+      <a href="/clients" class="btn btn-primary">See Client Results →</a>
+    </div>
+  </section>
+
+  <!-- ===== MINI CTA ===== -->
+  <section class="cta-section fade-in">
+    <div class="container">
+      <p class="section-label">Ready to Scale?</p>
+      <h2>Let's build something great together</h2>
+      <p>Drop your email below and we'll get back to you within 24 hours.</p>
+      <form action="https://formsubmit.co/liviamper@gmail.com" method="POST" class="cta-form">
+        <input type="hidden" name="_subject" value="New Inquiry from Livia Makes Perfect Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://liviamperfect.web.app/thanks">
+        <input type="text" name="_honey" style="display:none">
+        <input type="email" name="email" placeholder="Your work email..." required class="form-input">
+        <button type="submit" class="btn btn-primary">Get a Quote</button>
+      </form>
+    </div>
+  </section>
+</Layout>

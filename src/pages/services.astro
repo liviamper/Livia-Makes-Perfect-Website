@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<Layout 
+  title="Our Services — RevOps, Ads, Video & More | Livia Makes Perfect"
+  description="Explore our full range: Revenue Operations (HubSpot & Salesforce), Meta Ads, social media management, video production, graphics and content strategy."
+  keywords="RevOps agency, HubSpot agency, Meta Ads agency, social media management, video production agency, content marketing"
+  canonicalUrl="https://liviamperfect.web.app/services"
+>
+  <section class="page-hero container fade-in">
+    <p class="section-label">What We Do</p>
+    <h1>Our <span class="text-brand">Expertise</span> & RevOps</h1>
+    <p>We align marketing, sales, and operations to drive predictable revenue and exponential growth for your brand.</p>
+  </section>
+
+  <!-- Video Placeholder -->
+  <section class="section-sm container fade-in">
+    <div class="metric-placeholder" style="height:380px;border-radius:20px;border:1px solid var(--border);">
+      <span style="font-size:3rem;">🎬</span>
+      <span style="font-size:1rem;color:var(--text-muted);">Embed your agency promo video here</span>
+      <span style="font-size:0.8rem;color:var(--text-light);font-family:monospace;">/assets/videos/livia-promo.mp4</span>
+    </div>
+  </section>
+
+  <!-- Services Detail -->
+  <section class="section container fade-in">
+    <div class="services-grid">
+      <ServiceCard 
+        id="revops"
+        icon="📈" 
+        title="Revenue Operations (RevOps)" 
+        description="Aligning data, processes, technology, and teams. We expertly manage your <strong>Salesforce</strong> and <strong>HubSpot</strong> ecosystems, optimizing your entire CRM architecture to drive predictable revenue and exponential cross-team growth."
+      />
+      <ServiceCard 
+        id="graphics"
+        icon="🎨" 
+        title="Graphics Designing" 
+        description="We provide all types of graphics for your company — from social media to presentations or upgrading your old logo. Best and professional graphics design according to your need."
+      />
+      <ServiceCard 
+        id="video"
+        icon="🎬" 
+        title="Video & Animations" 
+        description="Our videos are featured at National Retail Federation, NY, USA. From professional shoots to aesthetic motion graphics that convert."
+      />
+      <ServiceCard 
+        id="social"
+        icon="📣" 
+        title="Social Media Management" 
+        description="The most populated virtual world. We provide the best management service for all platforms: scheduling posts, customer engagement, and lookalike audience growth."
+      />
+      <ServiceCard 
+        icon="✍️" 
+        title="Content Production" 
+        description="Content writing, content management, video creation, crisp editing, and professional account architecture setup."
+      />
+      <ServiceCard 
+        id="ads"
+        icon="🚀" 
+        title="Performance Ads" 
+        description="High ROI and CTR limit-pushing campaigns. We run performance marketing successfully across all major ad networks including Meta Ads and Google."
+      />
+    </div>
+  </section>
+
+  <section class="cta-section fade-in">
+    <div class="container">
+      <p class="section-label">Let's Work Together</p>
+      <h2>Ready to scale your revenue?</h2>
+      <p>Tell us about your business and we'll build a custom strategy for you — no fluff, just results.</p>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+        <a href="/clients" class="btn btn-outline btn-lg">See Our Work</a>
+      </div>
+    </div>
+  </section>
+</Layout>

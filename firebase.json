@@ -1,9 +1,8 @@
 {
   "hosting": {
-    "public": ".",
+    "public": "dist",
     "ignore": [
       "firebase.json",
-      "deploy.bat",
       "**/.*",
       "**/node_modules/**"
     ]
