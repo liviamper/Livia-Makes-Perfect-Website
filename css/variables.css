@@ -1,22 +1,22 @@
 :root {
-  /* Midnight Purple Base */
-  --color-bg-base: #0a0510; /* Very deep, rich midnight purple-tinted black */
-  --color-bg-surface: rgba(24, 14, 34, 0.45);
-  --color-bg-surface-light: rgba(42, 22, 58, 0.5);
+  /* Minimalist Subtle White Theme */
+  --color-bg-base: #fcfcfc; /* Very soft off-white */
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-light: #f8f9fa;
   
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border: #e2e8f0; /* Soft light gray border */
   
-  --color-text-primary: #fcfafc;
-  --color-text-secondary: #b3a8bc;
-  --color-text-muted: #726880;
+  --color-text-primary: #1a1523; /* Deep charcoal/indigo for high contrast */
+  --color-text-secondary: #4a5568; /* Mid-tone slate */
+  --color-text-muted: #a0aec0;
   
-  /* Livia Pink/Purple Gradient Colors */
+  /* Livia Pink/Purple Gradient Colors (Kept for Brand Identity) */
   --color-accent-primary: #FF3366;
   --color-accent-secondary: #9D50BB;
   
   /* Typography */
   --font-family-sans: 'Inter', sans-serif;
-  --font-family-display: 'Playfair Display', serif; /* Sophisticated bold serif */
+  --font-family-display: 'Playfair Display', serif;
   
   /* Layout Spacing */
   --spacing-xs: 0.5rem;
@@ -28,13 +28,13 @@
   
   /* Elements */
   --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-md: 12px; /* Slightly tighter rounding for minimalist feel */
+  --radius-lg: 20px;
   --radius-full: 9999px;
   
-  /* Effects */
-  --shadow-glow: 0 0 25px rgba(255, 51, 102, 0.4);
-  --shadow-depth: 0 25px 50px -12px rgba(0,0,0,0.9);
+  /* Effects (Minimalist) */
+  --shadow-glow: none; /* Removed neon glow */
+  --shadow-depth: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   
   /* Transitions */
   --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
