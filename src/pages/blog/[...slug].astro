@@ -4,9 +4,14 @@ import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.id }, props: { entry },
-  }));
+  return blogEntries.map(entry => {
+    // Strip the date prefix (YYYY-MM-DD-) from the slug for clean URLs
+    const cleanSlug = entry.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+    return {
+      params: { slug: cleanSlug },
+      props: { entry },
+    };
+  });
 }
 
 const { entry } = Astro.props;
