@@ -1,55 +1,14 @@
 /* 
-   LIVIA ABSOLUTE LIGHT MODE 3.0
-   Aggressively forcing white/light backgrounds and dark text.
+   LIVIA CMS - Force Light Mode
+   Minimal, targeted approach to avoid breaking the UI.
 */
 
+/* Force browser to render in light mode - this alone fixes most dark issues */
 :root {
-  color-scheme: light !important;
-  --hs-orange: #ff7a59;
-  --hs-blue: #2e475d;
-  --hs-bg: #f5f8fa;
-  --hs-text: #33475b;
+  color-scheme: light only !important;
 }
 
-/* 1. Global Background & Text Brute Force */
-html, body, #root, #nc-root, [id^="sveltia-cms"] {
-  background-color: white !important;
+html, body {
+  background: #fff !important;
   color: #33475b !important;
-}
-
-/* 2. Force all Containers to White */
-div, section, article, main, aside, nav, header, footer {
-  background-color: inherit !important;
-  color: inherit !important;
-}
-
-/* 3. Input & Editor Fields (Must be White with Dark Text) */
-input, textarea, select, 
-[contenteditable="true"], 
-.editor-control, 
-[class*="Control"], 
-[class*="Field"],
-[class*="editor"] {
-  background-color: #ffffff !important;
-  color: #33475b !important;
-  border: 1px solid #cbd6e2 !important;
-}
-
-/* 4. Hide the Preview Pane Brute Force (Backing up the config setting) */
-[class*="preview"], [id*="preview"], [data-testid*="preview"] {
-  display: none !important;
-  width: 0 !important;
-  pointer-events: none !important;
-}
-
-/* 5. Buttons - Agency Orange */
-button[class*="primary"], button[type="submit"] {
-  background-color: #ff7a59 !important;
-  color: white !important;
-}
-
-/* 6. Text inside the editor must be DARK */
-.ProseMirror, .markdown-body {
-  color: #33475b !important;
-  background-color: #ffffff !important;
 }
