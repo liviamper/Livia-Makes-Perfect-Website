@@ -19,20 +19,29 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     view_url: "https://liviamperfect.web.app/blog/{{id}}"
     fields:
-      - {label: "Main Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "1. MAIN TITLE", name: "title", widget: "string", hint: "The primary headline for your blog."}
       
-      - label: "1. FOCUS: Writing Body"
-        name: "body"
-        widget: "markdown"
-        hint: "Write your main content here. Headlines (h2, h3) will automatically build your Table of Contents."
-      
-      - label: "2. SETTINGS & SEO (Metadata)"
+      - label: "2. SEO & PREVIEW (Metadata)"
         name: "description"
         widget: "text"
-        hint: "Used for Google Search results and social sharing."
+        hint: "Short summary for Google and Social Media."
 
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "This image appears right below the title on the website."
+      
+      - label: "3. WRITING SPACE"
+        name: "body"
+        widget: "markdown"
+        hint: "Start writing your story here. Use Headlines (##) to build the TOC automatically."
+
+      - label: "4. PUBLISH SETTINGS (Technical)"
+        name: "date"
+        widget: "datetime"
+        hint: "Schedule when the post goes live."
+
       - {label: "Author Name", name: "author", widget: "string", default: "Livia Team"}
       
       - label: "Category"
