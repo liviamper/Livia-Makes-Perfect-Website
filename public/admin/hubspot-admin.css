@@ -1,100 +1,55 @@
 /* 
-   HUB SPOT "TOTAL LIGHT MODE" ENGINE 
-   Aggressive override to force Sveltia/Decap into a premium white interface.
+   LIVIA ABSOLUTE LIGHT MODE 3.0
+   Aggressively forcing white/light backgrounds and dark text.
 */
 
-/* 1. Force the Browser to Light Mode */
 :root {
   color-scheme: light !important;
   --hs-orange: #ff7a59;
   --hs-blue: #2e475d;
   --hs-bg: #f5f8fa;
-  --hs-border: #cbd6e2;
   --hs-text: #33475b;
 }
 
-/* 2. Global Background & Text Flash-over */
-html, body, #nc-root {
-  background-color: var(--hs-bg) !important;
-  color: var(--hs-text) !important;
+/* 1. Global Background & Text Brute Force */
+html, body, #root, #nc-root, [id^="sveltia-cms"] {
+  background-color: white !important;
+  color: #33475b !important;
 }
 
-/* 3. Hide BOTH Preview Panes (Side and Bottom) */
-[class*="PaneContainer-preview"], 
-[class*="PreviewPane"], 
-[class*="EditorPreviewPane"],
-div[data-testid="preview-pane"] {
+/* 2. Force all Containers to White */
+div, section, article, main, aside, nav, header, footer {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* 3. Input & Editor Fields (Must be White with Dark Text) */
+input, textarea, select, 
+[contenteditable="true"], 
+.editor-control, 
+[class*="Control"], 
+[class*="Field"],
+[class*="editor"] {
+  background-color: #ffffff !important;
+  color: #33475b !important;
+  border: 1px solid #cbd6e2 !important;
+}
+
+/* 4. Hide the Preview Pane Brute Force (Backing up the config setting) */
+[class*="preview"], [id*="preview"], [data-testid*="preview"] {
   display: none !important;
   width: 0 !important;
-  flex: 0 !important;
+  pointer-events: none !important;
 }
 
-/* 4. Force Editor Width to 100% */
-[class*="PaneContainer-control"], 
-[class*="EditorControlPane"] {
-  width: 100% !important;
-  flex: 1 1 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
+/* 5. Buttons - Agency Orange */
+button[class*="primary"], button[type="submit"] {
+  background-color: #ff7a59 !important;
+  color: white !important;
 }
 
-/* 5. Sidebar - Force White/Light Gray */
-nav[class*="Sidebar"], 
-aside[class*="Sidebar"] {
+/* 6. Text inside the editor must be DARK */
+.ProseMirror, .markdown-body {
+  color: #33475b !important;
   background-color: #ffffff !important;
-  border-right: 1px solid var(--hs-border) !important;
-  box-shadow: none !important;
-}
-
-nav[class*="Sidebar"] a {
-  color: var(--hs-text) !important;
-}
-
-nav[class*="Sidebar"] a:hover, 
-nav[class*="Sidebar"] a[aria-current="page"] {
-    background-color: #eaf0f6 !important;
-    color: var(--hs-orange) !important;
-}
-
-/* 6. Heavy Reset for Input Fields (No more dark boxes) */
-div[class*="ControlContainer"], 
-div[class*="Field"], 
-section[class*="Section"] {
-  background: white !important;
-  color: var(--hs-text) !important;
-  border: 1px solid var(--hs-border) !important;
-}
-
-input, textarea, select, .editor-control {
-  background-color: #ffffff !important;
-  color: var(--hs-text) !important;
-  border: 1px solid var(--hs-border) !important;
-}
-
-/* 7. The "HubSpot" Top Bar Header */
-header[class*="Header"] {
-  background: white !important;
-  border-bottom: 1px solid var(--hs-border) !important;
-  color: var(--hs-blue) !important;
-}
-
-/* 8. Make the primary buttons BIG and ORANGE */
-button[class*="Button-primary"] {
-    background-color: var(--hs-orange) !important;
-    color: white !important;
-    font-weight: 700 !important;
-    padding: 10px 30px !important;
-}
-
-/* 9. Header Branding Strip */
-body::before {
-    content: 'LIVIA CONTENT ENGINE | PROFESSIONAL AD OPS MODE';
-    background: var(--hs-blue);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-align: center;
-    padding: 8px 0;
-    display: block;
-    width: 100%;
 }

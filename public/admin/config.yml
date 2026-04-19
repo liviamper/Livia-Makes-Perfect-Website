@@ -18,6 +18,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     view_url: "https://liviamperfect.web.app/blog/{{id}}"
+    editor:
+      preview: false
     fields:
       - {label: "1. MAIN TITLE", name: "title", widget: "string", hint: "The primary headline for your blog."}
       
