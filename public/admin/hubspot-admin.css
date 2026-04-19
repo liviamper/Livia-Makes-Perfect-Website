@@ -1,14 +1,18 @@
 /* 
    LIVIA CMS - Force Light Mode
-   Minimal, targeted approach to avoid breaking the UI.
+   Using color-scheme at root level — works with Sveltia CMS's internal theming.
 */
 
-/* Force browser to render in light mode - this alone fixes most dark issues */
 :root {
   color-scheme: light only !important;
 }
 
 html, body {
-  background: #fff !important;
+  background-color: #f5f8fa !important;
   color: #33475b !important;
+}
+
+/* Force all scrollbars, form controls to light */
+* {
+  color-scheme: light !important;
 }
