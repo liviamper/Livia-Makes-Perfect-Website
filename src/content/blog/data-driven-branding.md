@@ -8,7 +8,7 @@ tag: "Branding"
 
 A beautiful logo is pointless if it doesn't build trust or trigger a click. 
 
-At **Livia Makes Perfect**, we don't just "design." We build visual identities based on **Conversion Psychology**. Our videos have been featured at the National Retail Federation in New York, not just because they look good, but because they tell a story that moves the needle.
+At **Livia Makes Perfect**, we don't just "design." We build visual identities based on **Conversion Psychology**. Our videos and motion graphics consistently yield higher conversion rates, not just because they look good, but because they tell a compelling brand story that genuinely moves the needle.
 
 ### Our Design Philosophy:
 - **Clarity over Cleverness:** Your customers should know exactly what you do within 3 seconds of seeing your social media feed.
