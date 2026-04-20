@@ -151,7 +151,7 @@ const { service } = Astro.props;
             {service.features.map(feature => (
               <li>
                 <span class="check">✓</span>
-                {feature}
+                <span class="feature-text">{feature}</span>
               </li>
             ))}
           </ul>
@@ -175,7 +175,9 @@ const { service } = Astro.props;
       <div class="container">
         <h2>Want to boost your {service.title} results?</h2>
         <p>Let's talk about your current bottlenecks and build a plan to solve them.</p>
-        <a href="/contact" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+        <div style="margin-top: 2rem;">
+          <a href="/contact" class="btn btn-primary btn-lg">Book a Free {service.title} Audit</a>
+        </div>
       </div>
     </section>
   </div>
@@ -204,25 +206,29 @@ const { service } = Astro.props;
   .features-list {
     margin-top: 2rem;
     display: grid;
-    gap: 1rem;
+    gap: 1.25rem;
   }
   .features-list li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     font-size: 1.1rem;
     color: var(--text-muted);
+  }
+  .feature-text {
+    line-height: 1.4;
+    padding-top: 2px;
   }
   .check {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background: var(--brand);
     color: white;
     border-radius: 50%;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     flex-shrink: 0;
   }
@@ -238,6 +244,12 @@ const { service } = Astro.props;
     border-radius: var(--radius-md);
     position: relative;
     padding-left: 4.5rem;
+  }
+  @media (max-width: 500px) {
+    .step-card {
+      padding-left: 1.5rem;
+      padding-top: 4rem;
+    }
   }
   .step-num {
     position: absolute;

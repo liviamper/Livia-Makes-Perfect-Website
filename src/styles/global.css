@@ -63,7 +63,8 @@ ul { list-style: none; }
   padding: 0.9rem 2rem; border-radius: var(--radius-pill);
   font-family: var(--font-body); font-weight: 600; font-size: 1rem;
   border: none; cursor: pointer; transition: var(--transition);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 .btn-primary { background: var(--brand); color: #fff; }
 .btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,51,102,0.25); }
@@ -72,6 +73,9 @@ ul { list-style: none; }
 .btn-outline:hover { background: var(--brand); color: #fff; transform: translateY(-2px); }
 
 .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+@media (max-width: 640px) {
+  .btn-lg { padding: 0.9rem 1.75rem; font-size: 1rem; }
+}
 
 /* --- HEADER / NAV --- */
 .site-header {
