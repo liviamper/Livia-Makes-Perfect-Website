@@ -138,9 +138,9 @@ ul { list-style: none; }
 }
 
 /* --- HERO --- */
-.hero { padding: 4rem 0 3rem; text-align: center; }
+.hero { padding-top: 4rem; padding-bottom: 3rem; text-align: center; }
 @media (min-width: 900px) {
-  .hero { padding: 7rem 0 6rem; }
+  .hero { padding-top: 7rem; padding-bottom: 6rem; }
 }
 .hero-headline { font-size: clamp(3rem, 7vw, 5.5rem); letter-spacing: -2px; margin-bottom: 1.75rem; }
 .hero-sub { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem; }
@@ -181,13 +181,13 @@ ul { list-style: none; }
 .brand-chip:hover { color: var(--brand); border-color: var(--brand); }
 
 /* --- SECTION WRAPPER --- */
-.section { padding: 4rem 0; }
+.section { padding-top: 4rem; padding-bottom: 4rem; }
 @media (min-width: 900px) {
-  .section { padding: 8rem 0; }
+  .section { padding-top: 8rem; padding-bottom: 8rem; }
 }
-.section-sm { padding: 3rem 0; }
+.section-sm { padding-top: 3rem; padding-bottom: 3rem; }
 @media (min-width: 900px) {
-  .section-sm { padding: 5rem 0; }
+  .section-sm { padding-top: 5rem; padding-bottom: 5rem; }
 }
 
 /* --- SERVICE CARDS (Solid, Animated) --- */
@@ -249,9 +249,9 @@ ul { list-style: none; }
 .portfolio-body p { color: var(--text-muted); font-size: 0.9rem; }
 
 /* --- CTA SECTION --- */
-.cta-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 0; text-align: center; }
+.cta-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding-top: 4rem; padding-bottom: 4rem; text-align: center; }
 @media (min-width: 900px) {
-  .cta-section { padding: 6rem 0; }
+  .cta-section { padding-top: 6rem; padding-bottom: 6rem; }
 }
 .cta-section h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
 .cta-section p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
@@ -286,9 +286,9 @@ textarea.form-input { border-radius: var(--radius-md); resize: vertical; min-hei
 .form-submit { padding: 1.1rem; font-size: 1.05rem; width: 100%; border-radius: var(--radius-md); }
 
 /* --- PAGE HEADER (inner pages) --- */
-.page-hero { padding: 4rem 0 2rem; text-align: center; border-bottom: 1px solid var(--border); }
+.page-hero { padding-top: 4rem; padding-bottom: 2rem; text-align: center; border-bottom: 1px solid var(--border); }
 @media (min-width: 900px) {
-  .page-hero { padding: 8rem 0 4rem; }
+  .page-hero { padding-top: 8rem; padding-bottom: 4rem; }
 }
 .page-hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
 .page-hero p { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.6; }
