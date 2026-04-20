@@ -261,7 +261,14 @@ ul { list-style: none; }
 
 /* --- CONTACT PAGE --- */
 .contact-grid { display: grid; gap: 4rem; grid-template-columns: 1fr; }
-@media (min-width: 1024px) { .contact-grid { grid-template-columns: 1fr 1.5fr; } }
+.contact-info { order: 2; }
+.form-card { order: 1; }
+
+@media (min-width: 1024px) { 
+  .contact-grid { grid-template-columns: 1fr 1.5fr; } 
+  .contact-info { order: 1; }
+  .form-card { order: 2; }
+}
 .contact-info h3 { font-size: 2rem; margin-bottom: 0.75rem; }
 .contact-info p { color: var(--text-muted); margin-bottom: 2rem; }
 .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
