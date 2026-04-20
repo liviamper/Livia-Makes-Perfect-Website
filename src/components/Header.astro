@@ -5,26 +5,55 @@ const currentPath = pathname.slice(1); // remove the leading slash
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo"><span>Livia</span> Makes Perfect</a>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-menu-btn">
+      <span style="font-size: 0.8rem; font-weight: 700; margin-right: 8px; text-transform: uppercase; letter-spacing: 1px;">Menu</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <a href="/services" class={currentPath === 'services' ? 'active' : ''}>Services</a>
       <a href="/clients" class={currentPath === 'clients' ? 'active' : ''}>Clients</a>
       <a href="/blog" class={currentPath.startsWith('blog') ? 'active' : ''}>Blog</a>
       <a href="/contact" class={currentPath === 'contact' ? 'active' : ''}>Contact</a>
-      <a href="/contact" class="btn btn-primary mobile-only-btn">Get a Quote</a>
+      <div class="mobile-only-btn-wrapper" style="margin-top: 1rem; width: 100%;">
+        <a href="/contact" class="btn btn-primary mobile-only-btn" style="width: 100%;">Get a Quote</a>
+      </div>
     </nav>
     <a href="/contact" class="btn btn-primary desktop-only-btn">Get a Quote</a>
   </div>
 </header>
 
 <script>
-  const btn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('.main-nav');
+  const btn = document.getElementById('mobile-menu-btn');
+  const nav = document.getElementById('main-nav');
+  const menuIcon = document.querySelector('.menu-icon') as HTMLElement;
+  const closeIcon = document.querySelector('.close-icon') as HTMLElement;
+  
   if (btn && nav) {
     btn.addEventListener('click', () => {
-      nav.classList.toggle('active');
+      const isActive = nav.classList.toggle('active');
+      btn.classList.toggle('is-active');
+      
+      if (menuIcon && closeIcon) {
+        menuIcon.style.display = isActive ? 'none' : 'block';
+        closeIcon.style.display = isActive ? 'block' : 'none';
+      }
+      
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+
+    // Close menu when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        btn.classList.remove('is-active');
+        if (menuIcon && closeIcon) {
+          menuIcon.style.display = 'block';
+          closeIcon.style.display = 'none';
+        }
+        document.body.style.overflow = '';
+      });
     });
   }
 </script>
