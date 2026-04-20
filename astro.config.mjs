@@ -5,6 +5,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://liviamperfect.web.app',
+  build: {
+    inlineStylesheets: 'always',
+  },
   integrations: [sitemap({
     entryLimit: 50000 // Force single file
   })],

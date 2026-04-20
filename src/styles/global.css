@@ -48,11 +48,7 @@ ul { list-style: none; }
   width: 100%; 
   max-width: var(--max-width); 
   margin: 0 auto; 
-  padding: 0 1.5rem; 
-}
-
-@media (min-width: 640px) {
-  .container { padding: 0 2rem; }
+  padding: 0 clamp(1.25rem, 5vw, 3rem); 
 }
 
 .text-center { text-align: center; }
