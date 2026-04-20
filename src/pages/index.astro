@@ -10,7 +10,7 @@ import ServiceCard from '../components/ServiceCard.astro';
   canonicalUrl="https://liviamperfect.web.app/"
 >
   <!-- ===== HERO ===== -->
-  <section class="hero container fade-in">
+  <section class="hero container">
     <p class="section-label">Digital Marketing & Revenue Operations</p>
     <h1 class="hero-headline">Make your business<br><span class="text-brand">Live-via</span> with Livia</h1>
     <p class="hero-sub">Your All-in-One Digital Marketing & Revenue Operations Solution. We build data-driven strategies with action plans to achieve your goals in minimum time & budget.</p>
@@ -19,7 +19,15 @@ import ServiceCard from '../components/ServiceCard.astro';
       <a href="/contact" class="btn btn-outline btn-lg">Get a Quote</a>
     </div>
     <div class="hero-visual">
-      <img src="/assets/images/social.png" alt="Livia Makes Perfect - Digital Marketing Creative Visual">
+      <img 
+        src="/assets/images/social.png" 
+        alt="Livia Makes Perfect - Digital Marketing Creative Visual" 
+        width="1100" 
+        height="600" 
+        style="aspect-ratio: 1100 / 600; width: 100%; height: auto;"
+        fetchpriority="high"
+        loading="eager"
+      />
     </div>
   </section>
 
