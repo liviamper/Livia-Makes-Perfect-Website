@@ -40,14 +40,14 @@ import heroImage from '../assets/images/social.png';
         <!-- First set -->
         <span class="brand-chip">InvestMindset</span>
         <span class="brand-chip">Novamil</span>
-        <span class="brand-chip">Mittal Institute</span>
+        <span class="brand-chip">Tech Funding News</span>
         <span class="brand-chip">Shishupuram</span>
         <span class="brand-chip">HotWax Commerce</span>
         <span class="brand-chip">iWoman TV</span>
         <!-- Duplicate for seamless loop -->
         <span class="brand-chip">InvestMindset</span>
         <span class="brand-chip">Novamil</span>
-        <span class="brand-chip">Mittal Institute</span>
+        <span class="brand-chip">Tech Funding News</span>
         <span class="brand-chip">Shishupuram</span>
         <span class="brand-chip">HotWax Commerce</span>
         <span class="brand-chip">iWoman TV</span>
@@ -64,34 +64,40 @@ import heroImage from '../assets/images/social.png';
     </div>
     <div class="services-grid">
       <ServiceCard 
+        slug="revenue-operations"
         icon="📈" 
         title="Revenue Operations" 
         description="Aligning data, processes, and teams via Salesforce & HubSpot to drive predictable, scalable revenue."
         delayClass="delay-1"
       />
       <ServiceCard 
+        slug="graphics-designing"
         icon="🎨" 
         title="Graphics & Branding" 
         description="From social media visuals to full brand identity — professional design that commands attention."
         delayClass="delay-2"
       />
       <ServiceCard 
+        slug="video-animations"
         icon="🎬" 
         title="Video & Animations" 
         description="Cinematic brand storytelling and AI-enhanced motion design that converts viewers into loyal customers."
         delayClass="delay-3"
       />
       <ServiceCard 
+        slug="social-media-management"
         icon="📣" 
         title="Social Media Management" 
         description="Scheduling, engagement, and audience growth across all platforms — done for you."
       />
       <ServiceCard 
+        slug="content-production"
         icon="✍️" 
         title="Content Production" 
         description="Content writing, video creation, editing, and account architecture setup — end-to-end."
       />
       <ServiceCard 
+        slug="performance-ads"
         icon="🚀" 
         title="Performance Ads" 
         description="High ROI ad campaigns across Meta and Google — built on data, optimized for growth."
@@ -147,4 +153,86 @@ import heroImage from '../assets/images/social.png';
       </form>
     </div>
   </section>
+  <script>
+    const setupTicker = () => {
+      const track = document.querySelector('.logo-ticker-track');
+      const inner = document.querySelector('.logo-ticker-inner') as HTMLElement;
+      if (!track || !inner) return;
+
+      // Duplicate content for infinite look
+      const items = Array.from(inner.children);
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        inner.appendChild(clone);
+      });
+
+      let isDragging = false;
+      let startX: number;
+      let scrollLeft: number;
+      let x = 0; // Current scroll position
+      let speed = 0.5; // Auto-scroll speed
+      let isPaused = false;
+
+      const animate = () => {
+        if (!isDragging && !isPaused) {
+          x -= speed;
+          // Loop logic: if x is further than half width, reset
+          if (Math.abs(x) >= inner.scrollWidth / 2) {
+            x = 0;
+          }
+          inner.style.transform = `translateX(${x}px)`;
+        }
+        requestAnimationFrame(animate);
+      };
+
+      animate();
+
+      // Mouse events
+      inner.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - inner.offsetLeft;
+        scrollLeft = x;
+        inner.style.cursor = 'grabbing';
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+        inner.style.cursor = 'grab';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const mouseX = e.pageX - inner.offsetLeft;
+        const walk = (mouseX - startX) * 1.5;
+        x = scrollLeft + walk;
+        inner.style.transform = `translateX(${x}px)`;
+      });
+
+      // Touch events
+      inner.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - inner.offsetLeft;
+        scrollLeft = x;
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const mouseX = e.touches[0].pageX - inner.offsetLeft;
+        const walk = (mouseX - startX) * 1.5;
+        x = scrollLeft + walk;
+        inner.style.transform = `translateX(${x}px)`;
+      }, { passive: false });
+
+      // Pause on hover
+      inner.addEventListener('mouseenter', () => isPaused = true);
+      inner.addEventListener('mouseleave', () => isPaused = false);
+    };
+
+    setupTicker();
+  </script>
 </Layout>

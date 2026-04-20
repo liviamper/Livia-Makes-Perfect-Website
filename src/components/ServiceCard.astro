@@ -5,12 +5,22 @@ export interface Props {
   description: string;
   delayClass?: string;
   id?: string;
+  slug?: string;
 }
 
-const { icon, title, description, delayClass = '', id } = Astro.props;
+const { icon, title, description, delayClass = '', id, slug } = Astro.props;
+const href = slug ? `/services/${slug}` : null;
 ---
-<div class={`service-card fade-in ${delayClass}`} id={id}>
-  <div class="icon">{icon}</div>
-  <h4>{title}</h4>
-  <p set:html={description}></p>
-</div>
+{href ? (
+  <a href={href} class={`service-card fade-in ${delayClass}`} id={id} style="display:block; color:inherit;">
+    <div class="icon">{icon}</div>
+    <h4>{title}</h4>
+    <p set:html={description}></p>
+  </a>
+) : (
+  <div class={`service-card fade-in ${delayClass}`} id={id}>
+    <div class="icon">{icon}</div>
+    <h4>{title}</h4>
+    <p set:html={description}></p>
+  </div>
+)}

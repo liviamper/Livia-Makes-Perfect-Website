@@ -1,0 +1,259 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const services = [
+    {
+      slug: 'revenue-operations',
+      title: 'Revenue Operations (RevOps)',
+      icon: '📈',
+      description: 'Aligning data, processes, technology, and teams. We expertly manage your Salesforce and HubSpot ecosystems, optimizing your entire CRM architecture to drive predictable revenue and exponential cross-team growth.',
+      longDescription: 'Revenue Operations (RevOps) is the strategic integration of sales, marketing, and customer success departments. At Livia Makes Perfect, we focus on breaking down silos to create a seamless funnel that drives measurable growth.',
+      features: [
+        'CRM Architecture & Optimization (HubSpot, Salesforce)',
+        'Sales & Marketing Alignment Strategy',
+        'Data Cleaning & Performance Analytics',
+        'Automated Lead Scoring Systems',
+        'Customer Journey Mapping'
+      ],
+      process: [
+        { title: 'Audit', desc: 'We deep-dive into your current CRM and process bottlenecks.' },
+        { title: 'Align', desc: 'We standardize data across all teams for a single source of truth.' },
+        { title: 'Automate', desc: 'We build workflows that save hundreds of manual hours.' }
+      ]
+    },
+    {
+      slug: 'graphics-designing',
+      title: 'Graphics Designing',
+      icon: '🎨',
+      description: 'We provide all types of graphics for your company — from social media to presentations or upgrading your old logo. Best and professional graphics design according to your need.',
+      longDescription: 'Visual identity is the first thing your customers see. Our design team creates high-impact visuals that not only look stunning but are engineered to communicate your brand values and drive conversions.',
+      features: [
+        'Full Brand Identity & Rebranding',
+        'Social Media Visual Systems',
+        'Investor Pitch Decks & Presentations',
+        'Marketing Collateral (OOH, Print)',
+        'UI/UX Design for Web & Apps'
+      ],
+      process: [
+        { title: 'Blueprint', desc: 'Understanding your brand voice and visual preferences.' },
+        { title: 'Design', desc: 'Iterative creation of high-fidelity visual assets.' },
+        { title: 'Deliver', desc: 'Optimized export for every platform and use case.' }
+      ]
+    },
+    {
+      slug: 'video-animations',
+      title: 'Video & Animations',
+      icon: '🎬',
+      description: 'Expertise in AI-enhanced motion design and cinematic brand storytelling that commands attention and drives results.',
+      longDescription: 'In a world of short attention spans, video is king. We combine cinematic storytelling with AI-enhanced motion graphics to create videos that stop the scroll and build deep brand affinity.',
+      features: [
+        'Brand Narrative & Storytelling',
+        '2D/3D Motion Illustrations',
+        'Product Teasers & Explainer Videos',
+        'AI-Powered Video Personalization',
+        'Social-First Vertical Video'
+      ],
+      process: [
+        { title: 'Scripting', desc: 'Crafting a narrative that speaks directly to your audience.' },
+        { title: 'Production', desc: 'High-end filming or intricate motion animation.' },
+        { title: 'Optimization', desc: 'A/B testing different hooks for maximum retention.' }
+      ]
+    },
+    {
+      slug: 'social-media-management',
+      title: 'Social Media Management',
+      icon: '📣',
+      description: 'The most populated virtual world. We provide the best management service for all platforms: scheduling posts, customer engagement, and lookalike audience growth.',
+      longDescription: 'Social media is more than just posting—it is about community and momentum. We handle the entire lifecycle of your social presence, transforming your channels into revenue-generating assets.',
+      features: [
+        'Channel-Specific Content Strategy',
+        'Proactive Community Engagement',
+        'Influencer Partnership Management',
+        'Real-time Monitoring & Social Listening',
+        'Viral Loop Mechanics & Growth Hacks'
+      ],
+      process: [
+        { title: 'Ideation', desc: 'Curating content that trends within your specific niche.' },
+        { title: 'Distribution', desc: 'Strategic posting at peak-engagement periods.' },
+        { title: 'Amplification', desc: 'Turning organic wins into targeted paid momentum.' }
+      ]
+    },
+    {
+      slug: 'content-production',
+      title: 'Content Production',
+      icon: '✍️',
+      description: 'Content writing, content management, video creation, crisp editing, and professional account architecture setup.',
+      longDescription: 'High-quality content is the fuel for your growth engine. We produce authoritative content that educates your audience, builds trust, and positions your brand as the industry leader.',
+      features: [
+        'SEO-Optimized Long-form Articles',
+        'Whitepapers & Lead Magnets',
+        'Case Study Newsletters',
+        'Multi-Channel Content Atomization',
+        'Documenting & Publishing Workflows'
+      ],
+      process: [
+        { title: 'Research', desc: 'Identifying high-intent topics your audience is searching for.' },
+        { title: 'Creation', desc: 'Authoritative writing and technical editing.' },
+        { title: 'Repurposing', desc: 'Turning one pillar piece into 10+ social assets.' }
+      ]
+    },
+    {
+      slug: 'performance-ads',
+      title: 'Performance Ads',
+      icon: '🚀',
+      description: 'High ROI and CTR limit-pushing campaigns. We run performance marketing successfully across all major ad networks including Meta Ads and Google.',
+      longDescription: 'We dont just run ads; we engineer scalable growth. By combining data-driven audience targeting with high-converting creative, we maximize your ROAS and minimize your CAC.',
+      features: [
+        'Meta/Facebook Ads Management',
+        'Google PPC & Search Performance',
+        'LinkedIn B2B Lead Generation',
+        'Retargeting & Remarketing Funnels',
+        'Creative Testing & Optimization'
+      ],
+      process: [
+        { title: 'Targeting', desc: 'Hyper-specific audience research and interest mapping.' },
+        { title: 'Execution', desc: 'Rapid A/B testing of hooks, copy, and visuals.' },
+        { title: 'Scaling', desc: 'Doubling down on winners to maximize your ROI.' }
+      ]
+    }
+  ];
+
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout 
+  title={`${service.title} | Livia Makes Perfect`}
+  description={service.description}
+  canonicalUrl={`https://liviamperfect.web.app/services/${service.slug}`}
+>
+  <div class="service-page">
+    <section class="page-hero container">
+      <p class="section-label">{service.icon} {service.title} Expertise</p>
+      <h1>Scalable <span class="text-brand">{service.title}</span></h1>
+      <p class="hero-sub">{service.longDescription}</p>
+      <div style="margin-top: 2rem;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Free {service.title} Audit</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="service-details-grid">
+        <div class="details-content fade-in">
+          <h2>Core Capabilities</h2>
+          <ul class="features-list">
+            {service.features.map(feature => (
+              <li>
+                <span class="check">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="details-process fade-in">
+          <h2>Our 3-Step Process</h2>
+          <div class="process-steps">
+            {service.process.map((step, index) => (
+              <div class="step-card">
+                <div class="step-num">0{index + 1}</div>
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section fade-in">
+      <div class="container">
+        <h2>Want to boost your {service.title} results?</h2>
+        <p>Let's talk about your current bottlenecks and build a plan to solve them.</p>
+        <a href="/contact" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .service-page {
+    padding-bottom: 2rem;
+  }
+  .hero-sub {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 1rem auto 0;
+  }
+  .service-details-grid {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .service-details-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .features-list {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .features-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--brand);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .process-steps {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    position: relative;
+    padding-left: 4.5rem;
+  }
+  .step-num {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand);
+    opacity: 0.3;
+  }
+  .step-card h4 {
+    margin-bottom: 0.5rem;
+  }
+  .step-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>
