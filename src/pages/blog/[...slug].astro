@@ -132,7 +132,7 @@ const schema = {
         )}
 
         <!-- Content Body -->
-        <div class="blog-content" style="font-size: 1.25rem; line-height: 1.9;">
+        <div class="blog-content">
           <Content />
         </div>
 
@@ -195,19 +195,31 @@ const schema = {
   /* Premium typography for blog posts */
   .blog-content {
     color: #333;
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    line-height: 1.8;
+    padding: 0 5%; /* Adds safe padding on mobile */
   }
+
+  @media (min-width: 900px) {
+    .blog-content {
+      padding: 0; /* Remove extra padding on desktop as it's in a grid */
+      font-size: 1.25rem;
+    }
+  }
+
   .blog-content h2 { 
     margin: 4rem 0 2rem; 
-    font-size: 2.2rem; 
+    font-size: clamp(1.8rem, 5vw, 2.4rem); 
     font-weight: 700;
+    line-height: 1.2;
   }
   .blog-content h3 { 
     margin: 3rem 0 1.5rem; 
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
     font-weight: 600;
   }
   .blog-content p { 
-    margin-bottom: 1.8rem; 
+    margin-bottom: 2rem; 
   }
   .blog-content ul, .blog-content ol { 
     margin-bottom: 2rem; 
