@@ -160,6 +160,7 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 5rem;
   width: max-content;
   animation: ticker-scroll 25s linear infinite;
+  will-change: transform;
 }
 .logo-ticker-inner:hover { animation-play-state: paused; }
 

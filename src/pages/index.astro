@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/social.png';
 ---
 
 <Layout 
@@ -19,9 +21,11 @@ import ServiceCard from '../components/ServiceCard.astro';
       <a href="/contact" class="btn btn-outline btn-lg">Get a Quote</a>
     </div>
     <div class="hero-visual">
-      <img 
-        src="/assets/images/social.png" 
+      <Image 
+        src={heroImage} 
         alt="Livia Makes Perfect - Digital Marketing Creative Visual" 
+        width={1100}
+        height={600}
         fetchpriority="high"
         loading="eager"
       />
@@ -38,14 +42,14 @@ import ServiceCard from '../components/ServiceCard.astro';
         <span class="brand-chip">Novamil</span>
         <span class="brand-chip">Mittal Institute</span>
         <span class="brand-chip">Shishupuram</span>
-        <span class="brand-chip">Hotwax</span>
+        <span class="brand-chip">HotWax Commerce</span>
         <span class="brand-chip">iWoman TV</span>
         <!-- Duplicate for seamless loop -->
         <span class="brand-chip">InvestMindset</span>
         <span class="brand-chip">Novamil</span>
         <span class="brand-chip">Mittal Institute</span>
         <span class="brand-chip">Shishupuram</span>
-        <span class="brand-chip">Hotwax</span>
+        <span class="brand-chip">HotWax Commerce</span>
         <span class="brand-chip">iWoman TV</span>
       </div>
     </div>

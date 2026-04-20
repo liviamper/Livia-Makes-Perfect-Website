@@ -34,13 +34,32 @@ const websiteSchema = {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager / Performance Optimized -->
   <script is:inline>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TLFSNM7Q');
+    // Delay non-critical trackers until user interaction or 4s timeout
+    window.addEventListener('load', () => {
+      const loadTrackers = () => {
+        if (window.trackersLoaded) return;
+        window.trackersLoaded = true;
+
+        // GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TLFSNM7Q');
+        
+        console.log('✅ Performance: Trackers initialized after interaction.');
+      };
+
+      // Listen for any user interaction
+      ['mouseover', 'keydown', 'touchstart', 'scroll'].forEach(ev => {
+        window.addEventListener(ev, loadTrackers, { passive: true, once: true });
+      });
+
+      // Fallback timeout
+      setTimeout(loadTrackers, 4000);
+    });
   </script>
   <!-- End Google Tag Manager -->
   
