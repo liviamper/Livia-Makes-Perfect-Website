@@ -1,43 +1,41 @@
-# Astro Starter Kit: Minimal
+# Livia Makes Perfect Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Welcome to the **Livia Makes Perfect Website** repository! This project powers the website at [liviamperfect.web.app](https://liviamperfect.web.app).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Overview
 
-## 🚀 Project Structure
+This website serves as the primary online presence for the brand, offering details on services, blog posts, and more. It is built using modern web development practices to ensure performance and responsiveness.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧞 Local Development
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+To run this project locally, follow these steps:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+2. **Start the local development server:**
+   ```sh
+   npm run dev
+   ```
+   The site will be available at `http://localhost:4321`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
+   This will generate a production-ready build in the `./dist/` directory.
 
-## 🧞 Commands
+## 🌍 Deployment
 
-All commands are run from the root of the project, from a terminal:
+This site is deployed on Firebase Hosting. Any changes pushed to the main branch are automatically built and deployed.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📝 Indexing on Google
 
-## 👀 Want to learn more?
+If you want to ensure Google indexes your site (`liviamperfect.web.app`), you can:
+1. Go to [Google Search Console](https://search.google.com/search-console).
+2. Add `https://liviamperfect.web.app` as a property.
+3. Submit the sitemap URL: `https://liviamperfect.web.app/sitemap.xml`.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+*Note: GitHub repositories are generally indexed by Google automatically. To improve visibility, consider adding topics/tags and a clear description to the repository on GitHub.*
