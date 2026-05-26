@@ -5,9 +5,10 @@ export interface Props {
   keywords?: string;
   canonicalUrl?: string;
   noindex?: boolean;
+  hideHeaderFooter?: boolean;
 }
 
-const { title, description, keywords, canonicalUrl, noindex = false } = Astro.props;
+const { title, description, keywords, canonicalUrl, noindex = false, hideHeaderFooter = false } = Astro.props;
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -65,7 +66,7 @@ const websiteSchema = {
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
   
   {noindex && <meta name="robots" content="noindex, nofollow">}
 
@@ -98,13 +99,13 @@ const websiteSchema = {
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLFSNM7Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   
-  <Header />
+  {!hideHeaderFooter && <Header />}
   
   <main>
     <slot />
   </main>
   
-  <Footer />
+  {!hideHeaderFooter && <Footer />}
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {

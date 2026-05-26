@@ -1,0 +1,915 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Professional Video Production & Animation Portfolio | Livia Makes Perfect"
+  description="Showcasing high-conversion motion graphics, 2D/3D animations, product explainers, viral reels, hooked short-form, and long-form video production."
+  keywords="video production, motion graphics portfolio, 3D animation, product explainers, viral reels, Instagram reels creator, hooked videos, video marketing"
+  canonicalUrl="https://liviamperfect.web.app/videos"
+  hideHeaderFooter={true}
+>
+  <div class="videos-landing">
+    <!-- ===== STANDALONE MINIMAL HEADER ===== -->
+    <header class="video-header">
+      <div class="header-container">
+        <a href="/" class="logo"><span>Livia</span> Makes Perfect</a>
+        <a href="/" class="btn-back">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Main Site
+        </a>
+      </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="video-hero">
+      <div class="container hero-content">
+        <div class="badge">🎬 VIDEO & ANIMATION STUDIO</div>
+        <h1 class="title">Visual Storytelling<br>That Commands <span class="neon-text">Attention</span></h1>
+        <p class="subtitle">From high-retention social reels to cinematic product explainers and custom 2D/3D motion graphics — we create videos that convert viewers into customers.</p>
+        <div class="hero-ctas">
+          <a href="#quote" class="btn btn-primary btn-lg">Start Your Project</a>
+          <a href="#portfolio" class="btn btn-outline-dark btn-lg">View Our Work</a>
+        </div>
+      </div>
+      <div class="gradient-glow"></div>
+    </section>
+
+    <!-- ===== STANDALONE PORTFOLIO SECTION ===== -->
+    <section class="section portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="text-center section-header">
+          <p class="section-label">Showcase</p>
+          <h2 class="section-title">Our Work Speaks for Itself</h2>
+          <p class="section-subtitle">Browse through our motion designs, 2D/3D animations, viral hooks, explainers, and long-form creations.</p>
+        </div>
+
+        <!-- Filter Navigation -->
+        <div class="portfolio-filters" id="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="motion-graphics">Motion Graphics</button>
+          <button class="filter-btn" data-filter="animations">2D & 3D Animations</button>
+          <button class="filter-btn" data-filter="explainers">Product Explainers</button>
+          <button class="filter-btn" data-filter="shorts">Shorts & Reels</button>
+          <button class="filter-btn" data-filter="long-form">Viral & Long-Form</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="video-grid" id="video-grid">
+          <!-- Card 1: Motion Graphics -->
+          <div class="video-card visible" data-category="motion-graphics" data-video="https://player.vimeo.com/video/505229819">
+            <div class="thumbnail-wrapper">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="SaaS UI Showcase" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Motion Graphics</span>
+              <h3>SaaS Dashboard Walkthrough</h3>
+              <p>Dynamic interface animations and smooth transitions showcasing software analytics dashboards.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Animations -->
+          <div class="video-card visible" data-category="animations" data-video="https://player.vimeo.com/video/347119299">
+            <div class="thumbnail-wrapper">
+              <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80" alt="3D Crypto Explainer" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">2D & 3D Animations</span>
+              <h3>DeFi Platform Character Explainer</h3>
+              <p>Custom 3D character design and keyframe animation explaining complex decentralized protocols.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Explainers -->
+          <div class="video-card visible" data-category="explainers" data-video="https://player.vimeo.com/video/318288599">
+            <div class="thumbnail-wrapper">
+              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="IoT Device" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Product Explainers</span>
+              <h3>Smart Hub Hardware Intro</h3>
+              <p>High-end cinematic rendering and callouts detailing internal sensors of smart IoT devices.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Shorts & Reels -->
+          <div class="video-card visible" data-category="shorts" data-video="https://player.vimeo.com/video/680327339">
+            <div class="thumbnail-wrapper vertical">
+              <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="Viral Finance Reel" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Shorts & Reels</span>
+              <h3>Viral Finance Hook Reel</h3>
+              <p>High-retention short-form reel with kinetic captions, sound FX, and attention grabbers.</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Explainers -->
+          <div class="video-card visible" data-category="explainers" data-video="https://player.vimeo.com/video/449339243">
+            <div class="thumbnail-wrapper">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="FinTech App walkthrough" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Product Explainers</span>
+              <h3>Mobile Banking App Launch</h3>
+              <p>Animated walkthrough and kinetic typography introducing modern mobile wallet functionalities.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Shorts & Reels -->
+          <div class="video-card visible" data-category="shorts" data-video="https://player.vimeo.com/video/692019777">
+            <div class="thumbnail-wrapper vertical">
+              <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=600&q=80" alt="Product Unboxing Reel" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Shorts & Reels</span>
+              <h3>E-commerce Unboxing Hook</h3>
+              <p>Fast-paced, highly curated visual hooks designed to maximize click-through rate on TikTok ads.</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Motion Graphics -->
+          <div class="video-card visible" data-category="motion-graphics" data-video="https://player.vimeo.com/video/511252726">
+            <div class="thumbnail-wrapper">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Dynamic Infographics" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Motion Graphics</span>
+              <h3>Interactive Data Viz Showcase</h3>
+              <p>Dynamic geometric graphics rendering maps, statistics, and trends for media outlets.</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Long-Form -->
+          <div class="video-card visible" data-category="long-form" data-video="https://player.vimeo.com/video/552199587">
+            <div class="thumbnail-wrapper">
+              <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Documentary interview" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Viral & Long-Form</span>
+              <h3>Founder's Journey Brand Film</h3>
+              <p>High-end corporate documentary showcasing real growth statistics and cinematic narratives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT/QUOTE SECTION ===== -->
+    <section class="section video-cta-section" id="quote">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-header text-center">
+            <p class="section-label">Get a Video Proposal</p>
+            <h2>Ready to Scale Your Video Content?</h2>
+            <p>Tell us about your project requirements and receive a custom estimate and timeline from our creative directors within 24 hours.</p>
+          </div>
+          
+          <form action="https://formsubmit.co/liviamper@gmail.com" method="POST" class="video-form">
+            <!-- Custom Settings for FormSubmit -->
+            <input type="hidden" name="_subject" value="New Video Production Request - Videos Landing Page">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://liviamperfect.web.app/thanks">
+            <input type="text" name="_honey" style="display:none">
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="v-name">Full Name</label>
+                <input type="text" id="v-name" name="name" placeholder="John Doe" required class="v-input" />
+              </div>
+              <div class="form-group">
+                <label for="v-email">Work Email</label>
+                <input type="email" id="v-email" name="email" placeholder="john@company.com" required class="v-input" />
+              </div>
+              <div class="form-group">
+                <label for="v-video-type">Preferred Video Style</label>
+                <select id="v-video-type" name="video_type" required class="v-input select-input">
+                  <option value="" disabled selected>Select style...</option>
+                  <option value="motion-graphics">Motion Graphics & VFX</option>
+                  <option value="animations">2D / 3D Animation</option>
+                  <option value="explainers">Product Explainer Video</option>
+                  <option value="shorts">Instagram Reels / TikToks (Short-form)</option>
+                  <option value="long-form">Long-form Video / YouTube / Cinematic</option>
+                  <option value="other">Other / Custom Mixture</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="v-budget">Estimated Budget Range</label>
+                <select id="v-budget" name="budget" required class="v-input select-input">
+                  <option value="" disabled selected>Select budget...</option>
+                  <option value="under-1k">Under $1,000</option>
+                  <option value="1k-3k">$1,000 - $3,000</option>
+                  <option value="3k-5k">$3,000 - $5,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k+">$10,000+</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group full-width" style="margin-top: 1.5rem;">
+              <label for="v-details">Project Description & References</label>
+              <textarea id="v-details" name="details" placeholder="Please describe what you want to achieve, video duration, and list any reference video styles you like..." required class="v-input v-textarea"></textarea>
+            </div>
+            
+            <div class="text-center" style="margin-top: 2.5rem;">
+              <button type="submit" class="btn btn-primary btn-submit">Submit Video Inquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MINIMAL STANDALONE FOOTER ===== -->
+    <footer class="video-footer">
+      <div class="container footer-content">
+        <p class="copyright">© 2026 Livia Makes Perfect Studio. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://in.linkedin.com/company/liviamakesperfect" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://www.instagram.com/liviamper/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== INTERACTIVE VIDEO PLAYBACK MODAL ===== -->
+    <div class="video-modal" id="video-modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-wrapper">
+        <button class="modal-close" id="modal-close" aria-label="Close video player">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="iframe-container">
+          <iframe id="modal-iframe" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  /* Global page-level override to establish a pure Cinematic Dark Theme */
+  body.videos-page-active {
+    background-color: #08060e !important;
+    color: #f3f4f6 !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+</style>
+
+<style>
+  /* Base settings for the Dark themed videos landing layout */
+  .videos-landing {
+    --dark-bg: #08060e;
+    --dark-surface: #100d1c;
+    --dark-surface-rgb: 16, 13, 28;
+    --dark-border: rgba(255, 255, 255, 0.08);
+    --dark-text: #f3f4f6;
+    --dark-text-muted: #9ca3af;
+    --brand-rgb: 255, 51, 102;
+    --brand: #FF3366;
+    --brand-dark: #e62d5a;
+    --shadow-glow: 0 10px 40px rgba(255, 51, 102, 0.15);
+    
+    background: var(--dark-bg);
+    color: var(--dark-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Minimal Header Styles */
+  .video-header {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--dark-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 6, 14, 0.85);
+    backdrop-filter: blur(16px);
+  }
+  .header-container {
+    max-width: var(--max-width, 1100px);
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .logo span {
+    color: var(--brand);
+  }
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--dark-text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 300ms ease;
+  }
+  .btn-back:hover {
+    color: #fff;
+  }
+
+  /* Hero Section */
+  .video-hero {
+    position: relative;
+    padding: 6rem 0 7rem;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-border);
+    overflow: hidden;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .badge {
+    background: rgba(255, 51, 102, 0.1);
+    color: var(--brand);
+    border: 1px solid rgba(255, 51, 102, 0.2);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 9999px;
+    margin-bottom: 2rem;
+    display: inline-block;
+  }
+  .title {
+    font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+    line-height: 1.1;
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  .neon-text {
+    color: var(--brand);
+    text-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+  }
+  .subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--dark-text-muted);
+    line-height: 1.6;
+    margin-bottom: 3.5rem;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-outline-dark {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  .btn-outline-dark:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .gradient-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 51, 102, 0.08) 0%, rgba(16, 13, 28, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Portfolio Tabs */
+  .portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-muted);
+    padding: 0.6rem 1.4rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition, all 300ms ease);
+  }
+  .filter-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  .filter-btn.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.25);
+  }
+
+  /* Portfolio Cards Grid */
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 640px) {
+    .video-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1024px) {
+    .video-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .video-card {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition, all 400ms cubic-bezier(0.16, 1, 0.3, 1));
+    display: none; /* Controlled by JS filters */
+  }
+  .video-card.visible {
+    display: flex;
+    flex-direction: column;
+    animation: scaleFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes scaleFadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .video-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .thumbnail-wrapper {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .thumbnail-wrapper.vertical {
+    aspect-ratio: 9/16;
+  }
+  .thumbnail-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .video-card:hover .thumbnail-wrapper img {
+    transform: scale(1.05);
+  }
+
+  /* Play Icon Overlay */
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 6, 14, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 300ms ease, background 300ms ease;
+  }
+  .video-card:hover .play-overlay {
+    opacity: 1;
+    background: rgba(8, 6, 14, 0.6);
+  }
+  .play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(255, 51, 102, 0.4);
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .play-btn svg {
+    width: 24px;
+    height: 24px;
+    transform: translateX(2px);
+  }
+  .video-card:hover .play-btn {
+    transform: scale(1.1);
+  }
+
+  .card-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brand);
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+  }
+  .card-info h3 {
+    font-size: 1.25rem;
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .card-info p {
+    font-size: 0.9rem;
+    color: var(--dark-text-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  /* Video CTA and Booking Form Section */
+  .video-cta-section {
+    background: #06040b;
+    border-top: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+    padding: 6rem 0;
+  }
+  .cta-card {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    border-radius: 28px;
+    padding: clamp(2rem, 5vw, 4rem);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand), #a855f7);
+  }
+  .cta-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .cta-header p {
+    font-size: 1.05rem;
+    color: var(--dark-text-muted);
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
+  }
+
+  /* Form Layout */
+  .video-form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    letter-spacing: 0.5px;
+  }
+  .v-input {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--dark-border);
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+  }
+  .v-input:focus {
+    border-color: var(--brand);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 0 4px rgba(255, 51, 102, 0.15);
+  }
+  .v-input::placeholder {
+    color: #4b5563;
+  }
+  .select-input {
+    cursor: pointer;
+    color: #9ca3af;
+  }
+  .select-input option {
+    background: #100d1c;
+    color: #fff;
+  }
+  .v-textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+  }
+  .btn-submit {
+    padding: 1.1rem 3rem;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 25px rgba(255, 51, 102, 0.3);
+  }
+
+  /* Minimal Footer */
+  .video-footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--dark-border);
+    background: #050409;
+    color: var(--dark-text-muted);
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    text-align: center;
+    max-width: var(--max-width, 1100px);
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+  }
+  @media (min-width: 640px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  .copyright {
+    font-size: 0.85rem;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-muted);
+    transition: var(--transition, all 300ms ease);
+  }
+  .footer-socials a:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+    background: rgba(255, 51, 102, 0.1);
+  }
+
+  /* Cinematic Interactive Playback Modal */
+  .video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+  }
+  .video-modal.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 2, 7, 0.92);
+    backdrop-filter: blur(8px);
+  }
+  .modal-wrapper {
+    position: relative;
+    z-index: 1010;
+    width: 90%;
+    max-width: 960px;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 51, 102, 0.1);
+    transform: scale(0.95);
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .video-modal.active .modal-wrapper {
+    transform: scale(1);
+  }
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1020;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 300ms ease, border-color 300ms ease;
+  }
+  .modal-close:hover {
+    background: var(--brand);
+    border-color: var(--brand);
+  }
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background: #000;
+  }
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+
+<script>
+  // Add body class on load for styling overrides
+  document.body.classList.add('videos-page-active');
+
+  // Interactive Category Filter Logic
+  const setupFilters = () => {
+    const filterContainer = document.getElementById('portfolio-filters');
+    const cards = document.querySelectorAll('.video-card');
+    if (!filterContainer || cards.length === 0) return;
+
+    filterContainer.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const button = target.closest('.filter-btn') as HTMLButtonElement;
+      if (!button) return;
+
+      // Update active state in buttons
+      filterContainer.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const filterValue = button.getAttribute('data-filter');
+
+      // Filter cards
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (filterValue === 'all' || cardCategory === filterValue) {
+          card.classList.add('visible');
+        } else {
+          card.classList.remove('visible');
+        }
+      });
+    });
+  };
+
+  // Video Modal Logic
+  const setupVideoModal = () => {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
+    const closeBtn = document.getElementById('modal-close');
+    const cards = document.querySelectorAll('.video-card');
+    
+    if (!modal || !iframe || !closeBtn) return;
+
+    const openModal = (videoUrl: string) => {
+      // Append autoplay query parameters to Vimeo/YouTube
+      let embedUrl = videoUrl;
+      if (videoUrl.includes('vimeo.com')) {
+        embedUrl = `${videoUrl}?autoplay=1&color=FF3366`;
+      } else if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+        embedUrl = `${videoUrl}${videoUrl.includes('?') ? '&' : '?'}autoplay=1`;
+      }
+      
+      iframe.setAttribute('src', embedUrl);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent page scroll
+    };
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      iframe.setAttribute('src', '');
+      document.body.style.overflow = ''; // Restore page scroll
+    };
+
+    // Bind triggers to card thumbnails
+    cards.forEach(card => {
+      const trigger = card.querySelector('.thumbnail-wrapper');
+      const videoUrl = card.getAttribute('data-video');
+      
+      if (trigger && videoUrl) {
+        trigger.addEventListener('click', () => openModal(videoUrl));
+      }
+    });
+
+    // Close on button click
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on click outside content
+    const backdrop = modal.querySelector('.modal-backdrop');
+    if (backdrop) {
+      backdrop.addEventListener('click', closeModal);
+    }
+
+    // Close on ESC key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  };
+
+  // Run initializations
+  document.addEventListener('DOMContentLoaded', () => {
+    setupFilters();
+    setupVideoModal();
+  });
+</script>
